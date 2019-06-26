@@ -8,7 +8,7 @@ import { TOAST_SUCCESS_MESSAGE } from './shared/constants';
 import LandingView from './modules/landingpage/LandingView';
 import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
 import LoginView from './modules/landingpage/login/LoginView';
-import SingUpView from './modules/landingpage/login/signip/LoginView';
+import SingUpView from './modules/landingpage/singup/SingUpView';
 
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
