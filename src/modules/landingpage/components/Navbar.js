@@ -1,5 +1,4 @@
-import React from 'react';
-import { Row, Button } from '@8base/boost';
+import React, {useState} from 'react';
 import {
   Collapse,
   Navbar,
@@ -8,34 +7,33 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Button} from 'reactstrap';
 
 const NavBar = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const onToggle = () => {
+    setToggle(!toggle);
+  };
+
   return(
     <Navbar expand="lg">
-      <div className='mr-auto'>
-      <NavbarBrand>
-
+      <NavbarBrand className='mr-auto'>
+        LOGO
       </NavbarBrand>
-      </div>
-        <div className='ml-auto'>
-           <NavbarToggler aria-controls="navbarNav"/>
-        </div>
-        <Collapse id="navbarNav" navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem className='mr-2 ml-3'>
-              <NavLink href='#'><span>LOG IN</span></NavLink>
-            </NavItem>
-            <NavItem className='mr-2 ml-3'>
-              <button><span><b>SING UP</b></span></button>
-            </NavItem>
-          </Nav>
+      <NavbarToggler onClick={onToggle} className='ml-auto'/>
+      <Collapse isopen={toggle.toString()} navbar>
+        <Nav className="ml-auto" navbar>
+          <NavItem className='mr-2 ml-3'>
+            <NavLink href='#' style={{color: '#B8C5D3'}}><span>LOG IN</span></NavLink>
+          </NavItem>
+          <NavItem className='mr-2 ml-3'>
+            <Button style={{backgroundColor: '#B8C5D3'}}><span><b>SING UP</b></span></Button>
+          </NavItem>
+        </Nav>
       </Collapse>
     </Navbar>
-  )
+  );
 };
 
 export {NavBar};

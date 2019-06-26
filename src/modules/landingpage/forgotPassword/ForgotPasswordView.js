@@ -2,7 +2,8 @@ import React from 'react';
 import {NavBar} from '../components/Navbar';
 import {Footer} from '../components/Footer';
 
-const SingUpView = () => {
+
+const ForgotPasswordView = () => {
   return(
     <div>
       <NavBar />
@@ -10,4 +11,4 @@ const SingUpView = () => {
     </div>
   );
 };
-export default SingUpView;
+export default ForgotPasswordView;

@@ -6,6 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import { auth0WebClient } from './modules/auth/auth.actions';
 import { TOAST_SUCCESS_MESSAGE } from './shared/constants';
 import LandingView from './modules/landingpage/LandingView';
+import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
+import LoginView from './modules/landingpage/login/LoginView';
+import SingUpView from './modules/landingpage/login/signip/LoginView';
 
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
@@ -15,6 +18,9 @@ const renderContent = () => {
     <AsyncContent stretch>
       <Switch>
         <Route path='/home' component={LandingView} />
+        <Route path='/forgotPassword' component={ForgotPasswordView} />
+        <Route path='/login' component={LoginView} />
+        <Route path='/singup' component={SingUpView} />
 
         <Route render={() => <Redirect to={'/home'} />} />
       </Switch>
@@ -23,7 +29,6 @@ const renderContent = () => {
 };
 
 const onRequestSuccess = ({ operation }) => {
-  console.log(operation);
   const message = operation.getContext()[TOAST_SUCCESS_MESSAGE];
 
   if (message) {
