@@ -1,14 +1,15 @@
-import React from 'react';
-import {NavBar} from '../components/Navbar';
+import React, {Fragment} from 'react';
+import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 
 
 const LoginView = () => {
   return(
-    <div>
-      <NavBar />
+    <Fragment>
+      <Header>
+      </Header>
       <Footer />
-    </div>
+    </Fragment>
   );
 };
 export default LoginView;
