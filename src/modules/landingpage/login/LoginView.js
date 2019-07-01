@@ -5,7 +5,7 @@ import {Col, Row} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import EmailLoginForm from './components/emailLoginForm';
 import PasswordLoginForm from './components/passwordLoginForm';
-
+import {AuthLogin} from '../../auth/auth.actions'
 
 const LoginView = () => {
   const [stepForm, setStepForm] = useState({step: 1, content: ''});
@@ -22,6 +22,7 @@ const LoginView = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     console.log(singinData);
+    AuthLogin(singinData.email, singinData.password)
   };
 
   const {

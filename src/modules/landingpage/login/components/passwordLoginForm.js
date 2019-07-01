@@ -11,7 +11,7 @@ const EmailLoginForm = ({value, onChange, onClick, onSubmit})  =>{
         <Row>
           <Col xs='8' sm='8'>
             <FormGroup>
-              <input className='inputTransparente' onChange={onChange}  type='password' value={value} name='email' placeholder='Your password'/>
+              <input className='inputTransparente' onChange={onChange}  type='password' value={value} name='password' placeholder='Your password'/>
             </FormGroup>
             <Row className='w-100'>
               <Col xs='6' sm='3'>
