@@ -1,0 +1,12 @@
+.header-logo {
+  background-image: url('../../../../images/headerLandingPage.png');
+  padding-top: 10px;
+  padding-bottom: 15%;
+  width: 100%;
+  height: auto;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

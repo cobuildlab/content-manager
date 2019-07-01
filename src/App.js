@@ -17,12 +17,10 @@ const renderContent = () => {
   return(
     <AsyncContent stretch>
       <Switch>
-        <Route path='/home' component={LandingView} />
+        <Route exact path='/home' component={LandingView} />
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
-
-        <Route render={() => <Redirect to={'/home'} />} />
       </Switch>
     </AsyncContent>
   );

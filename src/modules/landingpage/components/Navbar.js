@@ -17,7 +17,7 @@ const NavBar = () => {
   };
 
   return(
-    <Navbar expand="lg">
+    <Navbar expand="lg" style={{padding: 0}}>
       <NavbarBrand className='mr-auto'>
         <Link to='/home' style={{color: '#B8C5D3'}}>LOGO</Link>
       </NavbarBrand>
