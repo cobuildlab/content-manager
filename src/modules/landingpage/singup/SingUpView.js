@@ -2,7 +2,7 @@ import React, {Fragment, useState} from 'react';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {Button, Col, Row, Form, FormGroup} from 'reactstrap';
-
+import {AuthSingUp} from '../../auth/auth.actions'
 const SingUpView = () => {
   const [singupData, setData] = useState({usermane:'', email:'', password:'', terms:false});
 
@@ -17,6 +17,7 @@ const SingUpView = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     console.log(singupData);
+    AuthSingUp(singupData.username, singupData.email, singupData.password)
   };
 
   const {

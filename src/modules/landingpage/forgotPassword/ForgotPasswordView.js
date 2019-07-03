@@ -33,8 +33,6 @@ const ForgotPasswordView = () => {
     });
   };
 
-
-
   const {
     email,
     codevalidation,
@@ -53,47 +51,31 @@ const ForgotPasswordView = () => {
     console.log(codevalidation);
     onChangeStepForm(3);
   };
+  let content;
 
-  useEffect(() => {
-    switch (stepForm.step) {
-    case 1: {
-      setStepForm({
-        ...stepForm,
-        content: <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
-      });
-      break;
-    };
-    case 2: {
-      setStepForm({
-        ...stepForm,
-        content: <CodeValidationForgotPasswordForm value={codevalidation} onChange={onChangeInput} onClick={onChangeStepForm} onSubmit={onSubmitCodeVerification} />
-      });
-      break;
-    };
-    case 3: {
-      setStepForm({
-        ...stepForm,
-        content: <NewPasswordForgotPasswordForm value={{password, passwordConfirm}} onChange={onChangeInput}  onClick ={onChangeStepForm} onSubmit={onSubmitForm}/>
-      });
-      break;
-    };
-    case 4: {
-      setStepForm({
-        ...stepForm,
-        content: <SuccessForgotPasswordForm/>
-      });
-      break;
-    };
+  switch (stepForm.step) {
+  case 1: {
+    content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
+    break;
+  };
+  case 2: {
 
-    default:
-      setStepForm({
-        ...stepForm,
-        content:  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
-      });
-    }
-  },[stepForm, onChangeInput, onSubmitForm, onSubmitEmail, onSubmitCodeVerification, password, passwordConfirm, codevalidation]);
+      content= <CodeValidationForgotPasswordForm value={codevalidation} onChange={onChangeInput} onClick={onChangeStepForm} onSubmit={onSubmitCodeVerification} />
+    break;
+  };
+  case 3: {
+      content= <NewPasswordForgotPasswordForm value={{password, passwordConfirm}} onChange={onChangeInput}  onClick ={onChangeStepForm} onSubmit={onSubmitForm}/>
+    break;
+  };
+  case 4: {
+      content= <SuccessForgotPasswordForm/>
+    break;
+  };
 
-  const {content} = stepForm;
+  default:
+      content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
+  }
+
   return(
     <Fragment>
       <Header>

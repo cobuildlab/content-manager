@@ -37,32 +37,22 @@ const LoginView = () => {
     });
   };
 
-  useEffect(() => {
-    switch (stepForm.step) {
-    case 1: {
-      setStepForm({
-        ...stepForm,
-        content: <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
-      });
-      break;
-    };
-    case 2: {
-      setStepForm({
-        ...stepForm,
-        content: <PasswordLoginForm value={password} onChange={onChangeInput} onSubmit={onSubmitForm}  onClick ={onChangeStepForm}/>
-      });
-      break;
-    };
+let content
+  switch (stepForm.step) {
+  case 1: {
+      content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
+    break;
+  };
+  case 2: {
+      content= <PasswordLoginForm value={password} onChange={onChangeInput} onSubmit={onSubmitForm}  onClick ={onChangeStepForm}/>
 
-    default:
-      setStepForm({
-        ...stepForm,
-        content: <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
-      });
-    }
-  },[stepForm, email, password, onChangeInput, onSubmitForm, onChangeStepForm]);
+    break;
+  };
 
-  const {content} = stepForm;
+  default:
+      content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
+  }
+
   return(
     <Fragment>
       <Header>
