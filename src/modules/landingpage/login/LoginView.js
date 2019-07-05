@@ -1,11 +1,11 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useState} from 'react';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {Col, Row} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import EmailLoginForm from './components/emailLoginForm';
 import PasswordLoginForm from './components/passwordLoginForm';
-import {AuthLogin} from '../../auth/auth.actions'
+import {AuthLogin} from '../../auth/auth.actions';
 
 const LoginView = () => {
   const [stepForm, setStepForm] = useState({step: 1, content: ''});
@@ -22,7 +22,7 @@ const LoginView = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     console.log(singinData);
-    AuthLogin(singinData.email, singinData.password)
+    AuthLogin(singinData.email, singinData.password);
   };
 
   const {
@@ -37,20 +37,16 @@ const LoginView = () => {
     });
   };
 
-let content
+  let content;
   switch (stepForm.step) {
-  case 1: {
-      content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
+  case 1:
+    content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>;
     break;
-  };
-  case 2: {
-      content= <PasswordLoginForm value={password} onChange={onChangeInput} onSubmit={onSubmitForm}  onClick ={onChangeStepForm}/>
-
+  case 2:
+    content= <PasswordLoginForm value={password} onChange={onChangeInput} onSubmit={onSubmitForm}  onClick ={onChangeStepForm}/>;
     break;
-  };
-
   default:
-      content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>
+    content= <EmailLoginForm value={email} onChange={onChangeInput}  onClick ={onChangeStepForm}/>;
   }
 
   return(

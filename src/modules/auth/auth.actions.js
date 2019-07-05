@@ -1,6 +1,6 @@
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 import Auth0 from 'auth0-js';
-import Auth0Lock from 'auth0-lock'
+import Auth0Lock from 'auth0-lock';
 
 
 const {
@@ -22,13 +22,13 @@ export const auth0WebClient = new WebAuth0AuthClient({
 const options = {
   loginAfterSignUp: false,
   responseType: 'id_token',
-}
+};
 
 const auth0lock = new Auth0Lock(REACT_APP_CLIENT_ID, REACT_APP_DOMAIN, options);
 const auth0 = new Auth0.WebAuth({
   clientID: REACT_APP_CLIENT_ID,
   domain: REACT_APP_DOMAIN
-  })
+});
 
 const databaseConnection = REACT_APP_AUTH_DATABASE;
 export const AuthLogin = (email, password) => {
@@ -36,24 +36,25 @@ export const AuthLogin = (email, password) => {
   console.log(auth0.login);
   try {
     auth0.login({
-      realm: databaseConnection,
+      rml: databaseConnection,
       username: email,
       password: password,
     },
-  ((err, authResult) => {
-    if(err){
-      console.log(err);
-    } else {
-      console.log(authResult);
-    }
-  }))
+    ((err, authResult) => {
+      if(err){
+        console.log(err);
+      } else {
+        console.log(authResult);
+      }
+    }));
   } catch (e) {
     console.log(e.message);
   }
-}
+};
 
-export AuthSingUp = (username, email, password) => {
-  console.log(auth0.login);
+export const AuthSingUp = (username, email, password) => {
+  console.log(auth0.signup);
+  console.log(auth0lock);
   try {
     auth0.signup({
       connection: databaseConnection,
@@ -61,14 +62,14 @@ export AuthSingUp = (username, email, password) => {
       password: password,
       username: username
     },
-  ((err) => {
-    if(err){
-      console.log(err);
-    } else {
-      console.log('funciono');
-    }
-  }))
+    ((err) => {
+      if(err){
+        console.log(err);
+      } else {
+        console.log('funciono');
+      }
+    }));
   } catch (e) {
     console.log(e.message);
   }
-}
+};

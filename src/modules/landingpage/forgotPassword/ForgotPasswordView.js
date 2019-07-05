@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useState} from 'react';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {Col, Row} from 'reactstrap';
@@ -54,26 +54,20 @@ const ForgotPasswordView = () => {
   let content;
 
   switch (stepForm.step) {
-  case 1: {
-    content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
+  case 1:
+    content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>;
     break;
-  };
-  case 2: {
-
-      content= <CodeValidationForgotPasswordForm value={codevalidation} onChange={onChangeInput} onClick={onChangeStepForm} onSubmit={onSubmitCodeVerification} />
+  case 2:
+    content= <CodeValidationForgotPasswordForm value={codevalidation} onChange={onChangeInput} onClick={onChangeStepForm} onSubmit={onSubmitCodeVerification} />;
     break;
-  };
-  case 3: {
-      content= <NewPasswordForgotPasswordForm value={{password, passwordConfirm}} onChange={onChangeInput}  onClick ={onChangeStepForm} onSubmit={onSubmitForm}/>
+  case 3:
+    content= <NewPasswordForgotPasswordForm value={{password, passwordConfirm}} onChange={onChangeInput}  onClick ={onChangeStepForm} onSubmit={onSubmitForm}/>;
     break;
-  };
-  case 4: {
-      content= <SuccessForgotPasswordForm/>
+  case 4:
+    content= <SuccessForgotPasswordForm/>;
     break;
-  };
-
   default:
-      content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>
+    content=  <EmailForgotPasswordForm value={email} onChange={onChangeInput}  onClick ={onSubmitEmail}/>;
   }
 
   return(
