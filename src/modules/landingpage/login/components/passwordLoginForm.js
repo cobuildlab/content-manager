@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 import {Button, Form, FormGroup, Row, Col} from 'reactstrap';
+import { PropTypes } from 'prop-types';
 
-
-const EmailLoginForm = ({value, onChange, onClick, onSubmit})  =>{
+const PasswordLoginForm = ({value, onChange, onClick, onSubmit})  =>{
 
   return(
     <Fragment>
@@ -32,4 +32,11 @@ const EmailLoginForm = ({value, onChange, onClick, onSubmit})  =>{
   );
 };
 
-export default EmailLoginForm;
+PasswordLoginForm.propTypes = {
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default PasswordLoginForm;

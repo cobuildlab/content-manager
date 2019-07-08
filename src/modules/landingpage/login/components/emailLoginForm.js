@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import {Button, Form, FormGroup, Row, Col} from 'reactstrap';
+import { PropTypes } from 'prop-types';
 
 
 const EmailLoginForm = ({value, onChange, onClick})  =>{
@@ -21,6 +22,12 @@ const EmailLoginForm = ({value, onChange, onClick})  =>{
       </Form>
     </Fragment>
   );
+};
+
+EmailLoginForm.propTypes = {
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default EmailLoginForm;

@@ -2,7 +2,7 @@ import React, {Fragment, useState} from 'react';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {Button, Col, Row, Form, FormGroup} from 'reactstrap';
-import {AuthSingUp} from '../../auth/auth.actions'
+import {AuthSingUp} from '../../auth/auth.actions';
 const SingUpView = () => {
   const [singupData, setData] = useState({usermane:'', email:'', password:'', terms:false});
 
@@ -17,7 +17,7 @@ const SingUpView = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     console.log(singupData);
-    AuthSingUp(singupData.username, singupData.email, singupData.password)
+    AuthSingUp(singupData.username, singupData.email, singupData.password);
   };
 
   const {
@@ -51,7 +51,7 @@ const SingUpView = () => {
                       <input  type='checkbox' onChange={onChangeInput} checked={terms} name='terms'/> <label style={{color: '#B8C5D3'}}> I accept terms and conditions</label>
                     </FormGroup>
                     <FormGroup>
-                      <Button className='pl-3 pr-3 pt-2' style={{backgroundColor: '#B8C5D3', border: 'none'}}><span><b>LET'S START</b></span></Button>
+                      <Button className='pl-3 pr-3 pt-2' style={{backgroundColor: '#B8C5D3', border: 'none'}}><span><b>LET`S START</b></span></Button>
                     </FormGroup>
                   </Col>
                 </Row>

@@ -1,11 +1,8 @@
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 import Auth0 from 'auth0-js';
-import Auth0Lock from 'auth0-lock';
 
 
 const {
-  REACT_APP_AUTH_PROVIDER_ID,
-  REACT_APP_8BASE_API_ENDPOINT,
   REACT_APP_CLIENT_ID,
   REACT_APP_DOMAIN,
   REACT_APP_AUTH_DATABASE,
@@ -19,24 +16,27 @@ export const auth0WebClient = new WebAuth0AuthClient({
   logoutRedirectUri: `${window.location.origin}/home`,
 });
 
-const options = {
-  loginAfterSignUp: false,
-  responseType: 'id_token',
-};
 
-const auth0lock = new Auth0Lock(REACT_APP_CLIENT_ID, REACT_APP_DOMAIN, options);
 const auth0 = new Auth0.WebAuth({
   clientID: REACT_APP_CLIENT_ID,
-  domain: REACT_APP_DOMAIN
+  domain: REACT_APP_DOMAIN,
+  responseType: 'token id_token',
+  redirectUri: `${window.location.origin}/auth/callback`,
 });
 
 const databaseConnection = REACT_APP_AUTH_DATABASE;
+
+export const AuthLoginWithGoogle =() => {
+  auth0.authorize({
+    connection: 'googole-oauth2',
+  });
+};
+
 export const AuthLogin = (email, password) => {
   console.log(auth0);
-  console.log(auth0.login);
   try {
-    auth0.login({
-      rml: databaseConnection,
+    auth0.client.login({
+      realm: databaseConnection,
       username: email,
       password: password,
     },
@@ -54,13 +54,33 @@ export const AuthLogin = (email, password) => {
 
 export const AuthSingUp = (username, email, password) => {
   console.log(auth0.signup);
-  console.log(auth0lock);
   try {
     auth0.signup({
+      client_id: REACT_APP_CLIENT_ID,
       connection: databaseConnection,
       email: email,
       password: password,
       username: username
+    },
+    ((err) => {
+      if(err){
+        console.log(err);
+      } else {
+        console.log('funciono');
+      }
+    }));
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+export const SendCodeForgotPassword = (email) => {
+  try {
+    console.log(auth0.passwordlessStart);
+    auth0.passwordlessStart({
+      connection: databaseConnection,
+      email: email,
+      send: 'code',
     },
     ((err) => {
       if(err){

@@ -6,6 +6,7 @@ import EmailForgotPasswordForm from './components/emailForgotPasswordForm';
 import CodeValidationForgotPasswordForm from './components/codeValidationForgotPasswordForm';
 import NewPasswordForgotPasswordForm from './components/newPasswordForgotPasswordForm';
 import SuccessForgotPasswordForm from './components/successForgotPasswordForm';
+import {SendCodeForgotPassword} from '../../auth/auth.actions';
 
 
 const ForgotPasswordView = () => {
@@ -44,6 +45,7 @@ const ForgotPasswordView = () => {
     e.preventDefault();
     console.log(email);
     onChangeStepForm(2);
+    SendCodeForgotPassword(email);
   };
 
   const onSubmitCodeVerification = (e) => {

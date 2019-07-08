@@ -1,12 +1,13 @@
 import React, {Fragment} from 'react';
 import {Button, Form, FormGroup, Row, Col} from 'reactstrap';
+import { PropTypes } from 'prop-types';
 
 
 const CodeValidationForgotPasswordForm = ({value, onChange, onClick, onSubmit})  =>{
 
   return(
     <Fragment>
-      <p  style={{color: '#B8C5D3'}}><b><strong>We've send you an email with the verification code.</strong></b></p>
+      <p  style={{color: '#B8C5D3'}}><b><strong>We`ve send you an email with the verification code.</strong></b></p>
       <Form>
         <Row>
           <Col xs='8' sm='8'>
@@ -30,6 +31,13 @@ const CodeValidationForgotPasswordForm = ({value, onChange, onClick, onSubmit}) 
       </Form>
     </Fragment>
   );
+};
+
+CodeValidationForgotPasswordForm.propTypes = {
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default CodeValidationForgotPasswordForm;

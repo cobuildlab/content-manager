@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Col, Row,Form, FormGroup, Input } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 
 const Tittle = ({ children }) => {
   return(
@@ -7,7 +8,9 @@ const Tittle = ({ children }) => {
       <p className='h5 text-center' style={{color: 'white'}}><b><strong>{children}</strong></b></p>
     </div>
   );
-
+};
+Tittle.propTypes = {
+  children: PropTypes.func.isRequired,
 };
 
 const Footer = () => {

@@ -9,6 +9,7 @@ import LandingView from './modules/landingpage/LandingView';
 import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
 import LoginView from './modules/landingpage/login/LoginView';
 import SingUpView from './modules/landingpage/singup/SingUpView';
+import { Auth } from './routes/auth';
 
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
@@ -17,6 +18,7 @@ const renderContent = () => {
   return(
     <AsyncContent stretch>
       <Switch>
+        <Route path="/auth" component={Auth} />
         <Route exact path='/home' component={LandingView} />
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
