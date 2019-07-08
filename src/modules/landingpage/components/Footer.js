@@ -10,7 +10,7 @@ const Tittle = ({ children }) => {
   );
 };
 Tittle.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 const Footer = () => {

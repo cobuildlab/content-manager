@@ -13,7 +13,7 @@ const Header = ({children}) => {
 };
 
 Header.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export {Header};
