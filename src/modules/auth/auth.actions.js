@@ -19,11 +19,15 @@ export const auth0WebClient = new WebAuth0AuthClient({
   logoutRedirectUri: `${window.location.origin}/home`,
 });
 
-
 const options = {
   loginAfterSignUp: false,
-  redirectUrl:`${window.location.origin}/auth/callback`,
-  responseType: 'token id_token',
+  auth: {
+    redirectUrl: `${window.location.origin}/auth/callback`,
+    responseType: 'token id_token'
+  },
+  params: {
+      scope: 'openid email'
+    } 
 }
 
 const auth0lock = new Auth0Lock(REACT_APP_CLIENT_ID, REACT_APP_DOMAIN, options);
