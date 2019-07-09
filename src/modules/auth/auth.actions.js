@@ -22,6 +22,7 @@ export const auth0WebClient = new WebAuth0AuthClient({
 
 const options = {
   loginAfterSignUp: false,
+  redirectUrl:`${window.location.origin}/auth/callback`,
   responseType: 'token id_token',
 }
 

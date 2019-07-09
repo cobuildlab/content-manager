@@ -11,6 +11,7 @@ import LoginView from './modules/landingpage/login/LoginView';
 import SingUpView from './modules/landingpage/singup/SingUpView';
 import { Auth } from './routes/auth';
 import history from './shared/history'
+import {HomeView} from './modules/home/HomeView';
 
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
@@ -24,6 +25,7 @@ const renderContent = () => {
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
+        <Route path='/dashboard' component={HomeView} />
       </Switch>
     </AsyncContent>
   );
