@@ -1,6 +1,8 @@
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 import Auth0 from 'auth0-js';
-
+import {error, log} from 'pure-logger';
+import ModalSuccess from '../../components/modalAlerts/modalSuccess'
+import ModalError from '../../components/modalAlerts/modalError'
 
 const {
   REACT_APP_CLIENT_ID,
@@ -33,18 +35,18 @@ export const AuthLoginWithGoogle =() => {
 };
 
 export const AuthLogin = (email, password) => {
-  console.log(auth0);
   try {
-    auth0.client.login({
-      realm: databaseConnection,
+    log(auth0.redirect);
+    auth0.loginWithCredentials({
+      connection: databaseConnection,
       username: email,
       password: password,
     },
-    ((err, authResult) => {
+    ((err) => {
       if(err){
-        console.log(err);
+        error(err);
       } else {
-        console.log(authResult);
+        log('funciono');
       }
     }));
   } catch (e) {
@@ -52,21 +54,21 @@ export const AuthLogin = (email, password) => {
   }
 };
 
-export const AuthSingUp = (username, email, password) => {
-  console.log(auth0.signup);
+export const AuthSingUp = async(username, email, password) => {
   try {
-    auth0.signup({
-      client_id: REACT_APP_CLIENT_ID,
+  await auth0.signup({
       connection: databaseConnection,
       email: email,
       password: password,
-      username: username
+      nickname: username
     },
     ((err) => {
       if(err){
-        console.log(err);
+        error(' error in the signup: ', err)
+        ModalError(err.description)
       } else {
-        console.log('funciono');
+        log('funciono');
+      ModalSuccess('User created successfully', '/home', '')
       }
     }));
   } catch (e) {
@@ -74,19 +76,18 @@ export const AuthSingUp = (username, email, password) => {
   }
 };
 
-export const SendCodeForgotPassword = (email) => {
+export const ForgotPassword = (email) => {
   try {
     console.log(auth0.passwordlessStart);
-    auth0.passwordlessStart({
+    auth0.changePassword({
       connection: databaseConnection,
       email: email,
-      send: 'code',
     },
-    ((err) => {
+    ((err, resp) => {
       if(err){
         console.log(err);
       } else {
-        console.log('funciono');
+        console.log(resp);
       }
     }));
   } catch (e) {

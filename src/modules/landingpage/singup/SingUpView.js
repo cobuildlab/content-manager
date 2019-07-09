@@ -3,8 +3,10 @@ import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import {Button, Col, Row, Form, FormGroup} from 'reactstrap';
 import {AuthSingUp} from '../../auth/auth.actions';
+
+//component
 const SingUpView = () => {
-  const [singupData, setData] = useState({usermane:'', email:'', password:'', terms:false});
+  const [singupData, setData] = useState({username:'', email:'', password:'', terms:false});
 
   const onChangeInput = (e) => {
     const {name, value} = e.target;
@@ -14,14 +16,13 @@ const SingUpView = () => {
       });
   };
 
-  const onSubmitForm = (e) => {
+  const onSubmitForm = async(e) => {
     e.preventDefault();
-    console.log(singupData);
-    AuthSingUp(singupData.username, singupData.email, singupData.password);
+    await AuthSingUp(singupData.username, singupData.email, singupData.password);
   };
 
   const {
-    usermane,
+    username,
     email,
     password,
     terms
@@ -39,7 +40,7 @@ const SingUpView = () => {
                 <Row>
                   <Col xs='8' sm='8'>
                     <FormGroup>
-                      <input className='inputTransparente' onChange={onChangeInput} type='text' value={usermane} name='usermane' placeholder='User Name'/>
+                      <input className='inputTransparente' onChange={onChangeInput} type='text' value={username} name='username' placeholder='User Name'/>
                     </FormGroup>
                     <FormGroup>
                       <input className='inputTransparente' onChange={onChangeInput}  type='email' value={email} name='email' placeholder='Your email'/>
