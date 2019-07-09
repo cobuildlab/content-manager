@@ -7,6 +7,7 @@ import Image1 from '../../images/imageLandingPage1.png';
 import Image2 from '../../images/imageLandingPage2.png';
 import Image3 from '../../images/imageLandingPage3.png';
 
+
 const styleImage = {
   width: 250,
 };

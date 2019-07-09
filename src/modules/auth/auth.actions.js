@@ -1,5 +1,6 @@
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 import Auth0 from 'auth0-js';
+import Auth0Lock from 'auth0-lock';
 import {error, log} from 'pure-logger';
 import ModalSuccess from '../../components/modalAlerts/modalSuccess'
 import ModalError from '../../components/modalAlerts/modalError'
@@ -19,6 +20,13 @@ export const auth0WebClient = new WebAuth0AuthClient({
 });
 
 
+const options = {
+  loginAfterSignUp: false,
+  responseType: 'token id_token',
+}
+
+const auth0lock = new Auth0Lock(REACT_APP_CLIENT_ID, REACT_APP_DOMAIN, options);
+
 const auth0 = new Auth0.WebAuth({
   clientID: REACT_APP_CLIENT_ID,
   domain: REACT_APP_DOMAIN,
@@ -34,21 +42,11 @@ export const AuthLoginWithGoogle =() => {
   });
 };
 
-export const AuthLogin = (email, password) => {
+export const AuthLogin = () => {
   try {
-    log(auth0.redirect);
-    auth0.loginWithCredentials({
-      connection: databaseConnection,
-      username: email,
-      password: password,
-    },
-    ((err) => {
-      if(err){
-        error(err);
-      } else {
-        log('funciono');
-      }
-    }));
+    auth0lock.show({
+      initialScreen: 'login'
+    })
   } catch (e) {
     console.log(e.message);
   }

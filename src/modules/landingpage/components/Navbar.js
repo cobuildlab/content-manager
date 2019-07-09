@@ -8,6 +8,7 @@ import {
   Nav,
   NavItem,
   Button} from 'reactstrap';
+import {AuthLogin} from '../../auth/auth.actions';
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -25,7 +26,7 @@ const NavBar = () => {
       <Collapse isOpen={toggle} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem className='mr-2 ml-3'>
-            <NavLink to='/login' style={{color: '#B8C5D3'}}><span>LOG IN</span></NavLink>
+            <NavLink to='#' onClick={(e)=>{AuthLogin()}} style={{color: '#B8C5D3'}}><span>LOG IN</span></NavLink>
           </NavItem>
           <NavItem className='mr-3 ml-3'>
             <Button className='btn pr-3 pl-3' style={{backgroundColor: '#B8C5D3', border: 'none'}}><Link to='/singup' style={{color: 'white'}}><span><b>SING UP</b></span></Link></Button>
