@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
 import { EightBaseAppProvider } from '@8base/app-provider';
 import { AsyncContent, EightBaseBoostProvider } from '@8base/boost';
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,6 +9,9 @@ import LandingView from './modules/landingpage/LandingView';
 import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
 import LoginView from './modules/landingpage/login/LoginView';
 import SingUpView from './modules/landingpage/singup/SingUpView';
+import { Auth } from './routes/auth';
+import history from './shared/history'
+import {HomeView} from './modules/home/HomeView';
 
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
@@ -17,12 +20,12 @@ const renderContent = () => {
   return(
     <AsyncContent stretch>
       <Switch>
-        <Route path='/home' component={LandingView} />
+        <Route path="/auth" component={Auth} />
+        <Route exact path='/home' component={LandingView} />
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
-
-        <Route render={() => <Redirect to={'/home'} />} />
+        <Route path='/dashboard' component={HomeView} />
       </Switch>
     </AsyncContent>
   );
@@ -38,7 +41,7 @@ const onRequestSuccess = ({ operation }) => {
 
 const App = () => {
   return (
-    <Router>
+    <Router history={history}>
       <EightBaseBoostProvider>
         <EightBaseAppProvider
           uri={REACT_APP_8BASE_API_ENDPOINT}

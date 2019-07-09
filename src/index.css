@@ -9,3 +9,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.inputTransparente {
+  size: auto;
+  border: none;
+  background: transparent;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-left: 2px;
+  border-bottom:1px solid white;
+}
+
+.inputTransparente:focus{
+  outline: none !important;
+  border-bottom:1px solid white;
+  -webkit-transition: border-bottom ease-in-out .15s;
+  -o-transition: border-bottom ease-in-out .15s;
+  transition: border-bottom ease-in-out .15s;
+}
+
+.inputTransparente::placeholder{
+  color: #B8C5D3;
+}
+
+.inputTransparente:-webkit-autofill,
+.inputTransparente:-webkit-autofill:hover,
+.inputTransparente:-webkit-autofill:focus,
+.inputTransparente:-webkit-autofill:active {
+    transition: background 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #B8C5D3;
+}

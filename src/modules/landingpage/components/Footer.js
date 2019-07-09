@@ -2,14 +2,15 @@ import React, {useState} from 'react';
 import { Col, Row,Form, FormGroup, Input } from 'reactstrap';
 import { PropTypes } from 'prop-types';
 
-
 const Tittle = ({ children }) => {
   return(
-    <div style={{width: 'max-content', borderBottom: '1px solid white', marginBottom: '3%'}}>
+    <div style={{ marginBottom: '3%', width: 'fit-content', color: 'white', borderBottom: '1px solid white'}}>
       <p className='h5 text-center' style={{color: 'white'}}><b><strong>{children}</strong></b></p>
     </div>
   );
-
+};
+Tittle.propTypes = {
+  children: PropTypes.string.isRequired,
 };
 
 const Footer = () => {
@@ -20,8 +21,8 @@ const Footer = () => {
   };
 
   const FooterInfo = (
-    <div className='container-fluid' style={{backgroundColor: '#B8C5D3', paddingTop: '2%', paddingBottom: '2%'}}>
-      <Row className=' align-items-center w-100 justify-content-center'>
+    <div  className='container-fluid' style={{backgroundColor: '#B8C5D3', paddingTop: '2%', paddingBottom: '2%'}}>
+      <Row className='w-100 justify-content-center'>
         <Col  xs={6} sm={3} >
           <Tittle>ABOUT THE BLOG</Tittle>
           <p className='text-left text-break' style={{color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -59,7 +60,7 @@ const Footer = () => {
 
   const FooterReserved = (
     <div className='container-fluid' style={{backgroundColor: '#2F2F2F'}}>
-      <Row className='w-100 justify-content-center'>
+      <Row className='w-100 align-items-center justify-content-center'>
         <Col  xs={12} sm={10} >
           <p style={{color:   '#B8C5D3'}}>Copyright@loremipsum-2019-AllRights Reserved.</p>
         </Col>
@@ -74,8 +75,6 @@ const Footer = () => {
   );
 };
 
-Tittle.prototype = {
-  children : PropTypes.string.isRequired
-};
+
 
 export {Footer};
