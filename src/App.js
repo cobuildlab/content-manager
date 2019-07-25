@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
 import { EightBaseAppProvider } from '@8base/app-provider';
 import { AsyncContent, EightBaseBoostProvider } from '@8base/boost';
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,10 +26,7 @@ const renderContent = () => {
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
-        <Route>
-          <Header />
-          <Route path='/dashboard' component={HomeView} />
-        </Route>
+        <Route path='/dashboard' component={HomeView} />
       </Switch>
     </AsyncContent>
   );

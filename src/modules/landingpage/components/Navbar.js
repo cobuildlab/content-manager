@@ -19,8 +19,8 @@ const NavBar = () => {
 
   return(
     <Navbar expand="lg" style={{padding: 0}}>
-      <NavbarBrand className='mr-auto'>
-        <Link to='/home' style={{color: '#B8C5D3'}}>LOGO</Link>
+      <NavbarBrand className='mr-auto' href='/home' style={{color: '#B8C5D3'}}>
+        LOGO
       </NavbarBrand>
       <NavbarToggler onClick={onToggle} className='ml-auto'/>
       <Collapse isOpen={toggle} navbar>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import Header from '../../components/Header'
 
 const HomeView = () => {
   return(
-    <div>
+    <Fragment>
+      <Header />
       Home
-    </div>
+    </Fragment>
   )
 }
 
