@@ -1,6 +1,5 @@
-import React, {Fragment} from 'react';
 import Modal from './modal';
-import {handleRedirect} from '../../shared/redirectPage'
+import {handleRedirect} from '../../shared/redirectPage';
 
 const ModalSuccess = (content, route, state) => {
   return Modal.fire({
@@ -9,9 +8,9 @@ const ModalSuccess = (content, route, state) => {
     type: 'success',
     onClose: () =>
     {
-        handleRedirect(route, state)
+      handleRedirect(route, state);
     }
-  })
+  });
 };
 
-export default ModalSuccess
+export default ModalSuccess;

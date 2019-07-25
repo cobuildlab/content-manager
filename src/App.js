@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { EightBaseAppProvider } from '@8base/app-provider';
 import { AsyncContent, EightBaseBoostProvider } from '@8base/boost';
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,8 +9,9 @@ import LandingView from './modules/landingpage/LandingView';
 import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
 import LoginView from './modules/landingpage/login/LoginView';
 import SingUpView from './modules/landingpage/singup/SingUpView';
+import Header from './components/Header';
 import { Auth } from './routes/auth';
-import history from './shared/history'
+import history from './shared/history';
 import {HomeView} from './modules/home/HomeView';
 
 
@@ -25,7 +26,10 @@ const renderContent = () => {
         <Route path='/forgotPassword' component={ForgotPasswordView} />
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
-        <Route path='/dashboard' component={HomeView} />
+        <Route>
+          <Header />
+          <Route path='/dashboard' component={HomeView} />
+        </Route>
       </Switch>
     </AsyncContent>
   );

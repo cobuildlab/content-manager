@@ -6,8 +6,8 @@ import Auth0 from 'auth0-js';
 import Auth0Lock from 'auth0-lock';
 import ApolloClient from 'apollo-boost';
 import {error, log} from 'pure-logger';
-import ModalSuccess from '../../components/modalAlerts/modalSuccess'
-import ModalError from '../../components/modalAlerts/modalError'
+import ModalSuccess from '../../components/modalAlerts/modalSuccess';
+import ModalError from '../../components/modalAlerts/modalError';
 
 const {
   REACT_APP_CLIENT_ID,
@@ -32,9 +32,9 @@ const options = {
     responseType: 'token id_token'
   },
   params: {
-      scope: 'openid email'
-    }
-}
+    scope: 'openid email'
+  }
+};
 
 //conect auth0-lock
 const auth0lock = new Auth0Lock(REACT_APP_CLIENT_ID, REACT_APP_DOMAIN, options);
@@ -61,7 +61,7 @@ export const AuthLogin = () => {
   try {
     auth0lock.show({
       initialScreen: 'login'
-    })
+    });
   } catch (e) {
     console.log(e.message);
   }
@@ -71,7 +71,7 @@ export const AuthLogin = () => {
 // call function of signup of auth0 js
 export const AuthSingUp = async(username, email, password) => {
   try {
-  await auth0.signup({
+    await auth0.signup({
       connection: databaseConnection,
       email: email,
       password: password,
@@ -79,12 +79,12 @@ export const AuthSingUp = async(username, email, password) => {
     },
     (async (err) => {
       if(err){
-        error(' error in the signup: ', err)
-        ModalError(err.description)
+        error(' error in the signup: ', err);
+        ModalError(err.description);
       } else {
         log('funciono');
-        await CreateUser(email, password)
-      ModalSuccess('User created successfully', '/home', '')
+        await CreateUser(email, password);
+        ModalSuccess('User created successfully', '/home', '');
       }
     }));
   } catch (e) {
@@ -123,15 +123,15 @@ export const CreateUser = async(email, password) => {
     user: { email },
     password,
     authId: REACT_APP_AUTH_PROVIDER_ID,
-  }
-    let response
-    try {
-      response = await client.mutate({
-        mutation: CREATE_USER_QUERY,
-        variables: data,
-      });
-    } catch (e) {
-      error('createUser', e);
-    }
-    log('createUser', response);
   };
+  let response;
+  try {
+    response = await client.mutate({
+      mutation: CREATE_USER_QUERY,
+      variables: data,
+    });
+  } catch (e) {
+    error('createUser', e);
+  }
+  log('createUser', response);
+};
