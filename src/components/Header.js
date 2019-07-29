@@ -2,63 +2,41 @@ import React, {Fragment, useState} from 'react';
 import {
   Navbar,
   NavbarBrand,
-  Col,
-  Row,
-  Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  UncontrolledDropdown,
+  Nav,
 } from 'reactstrap';
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
-  const [toggleTwo, setToggleTwo] = useState(false);
-
-  const onToggle = () => {
-    setToggle(!toggle);
-  };
-  const onToggleTwo = () => {
-    setToggleTwo(!toggleTwo);
-  };
   return(
     <Fragment>
       <Navbar  expand="lg">
         <NavbarBrand className='mr-auto'>
           <p >LOGO</p>
         </NavbarBrand>
-          <Col xs='auto' xm='auto' className='mx-auto'>
-            <NavbarBrand>
+            <NavbarBrand className='mx-auto'>
               <p className='h4'>Lorem<b>Ipsum</b></p>
             </NavbarBrand>
-          </Col>
-          <Col xs='auto' xm='auto'>
-            <Dropdown isOpen={toggle} toggle={onToggle}>
-            <DropdownToggle caret
-               tag="span"
-               onClick={onToggle}
-               data-toggle="dropdown"
-               aria-expanded={toggle}
-             >
-               Account
-               <DropdownMenu>
-                <DropdownItem></DropdownItem>
-               </DropdownMenu>
-             </DropdownToggle>
-            </Dropdown>
-            <Dropdown isOpen={toggleTwo} toggle={onToggleTwo}>
-            <DropdownToggle caret
-               tag="span"
-               onClick={onToggleTwo}
-               data-toggle="dropdown"
-               aria-expanded={toggleTwo}
-             >
+          <Nav className='ml-auto' navbar>
+           <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                 Account
+                 <DropdownMenu>
+                  <DropdownItem></DropdownItem>
+                 </DropdownMenu>
+               </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav inNavbar>
+                   <DropdownToggle nav caret>
                Lorem Ispum
                <DropdownMenu>
                 <DropdownItem></DropdownItem>
                </DropdownMenu>
              </DropdownToggle>
-            </Dropdown>
-          </Col>
+            </UncontrolledDropdown>
+          </Nav>
       </Navbar>
     </Fragment>
   );
