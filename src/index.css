@@ -41,3 +41,11 @@ code {
     transition: background 5000s ease-in-out 0s;
     -webkit-text-fill-color: #B8C5D3;
 }
+
+.main{
+  height: 100%;
+  background-color: #2F2F2F;
+  margin-left: 50px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+  color: #B8C5D3
+}

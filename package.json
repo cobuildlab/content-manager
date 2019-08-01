@@ -15,6 +15,7 @@
     "auth0-lock": "^11.16.3",
     "bootstrap": "^4.3.1",
     "emotion": "^9.2.12",
+    "font-awesome": "^4.7.0",
     "formik": "^1.5.7",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.10.1",
