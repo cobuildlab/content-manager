@@ -47,5 +47,6 @@ code {
   background-color: #2F2F2F;
   margin-left: 50px; /* Same as the width of the sidenav */
   padding: 0px 10px;
-  color: #B8C5D3
+  color: #B8C5D3;
+  width: 100%
 }

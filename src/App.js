@@ -9,7 +9,6 @@ import LandingView from './modules/landingpage/LandingView';
 import ForgotPasswordView from './modules/landingpage/forgotPassword/ForgotPasswordView';
 import LoginView from './modules/landingpage/login/LoginView';
 import SingUpView from './modules/landingpage/singup/SingUpView';
-import Header from './components/Header';
 import { Auth } from './routes/auth';
 import history from './shared/history';
 import {HomeView} from './modules/home/HomeView';
