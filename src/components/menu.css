@@ -2,28 +2,27 @@
   height: 100%;
   background-color: #000000;
   width: 50px;
-
-  position: absolute;
-  top: 5;
-  left: 0;
+  position: fixed;
 }
 
 .menu {
-  position: relative;
-  align-items: flex-start;
   align-content: center;
 }
 
 .menu-end {
-  position: relative;
-  
-  align-items: flex-end;
   align-content: center;
+  padding-bottom: 300px
 }
 .item-menu {
   padding-top: 10px;
   padding-bottom: 6px;
   border-bottom: solid 1px;
+  width: fit-content;
+}
+
+.item-menu-end {
+  padding-top: 10px;
+  padding-bottom: 6px;
   width: fit-content;
 }
 

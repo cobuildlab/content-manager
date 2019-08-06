@@ -7,6 +7,8 @@ import {
   DropdownItem,
   UncontrolledDropdown,
   Nav,
+  NavItem,
+  NavLink
 } from 'reactstrap';
 
 const Header = () => {
@@ -36,6 +38,9 @@ const Header = () => {
                </DropdownMenu>
              </DropdownToggle>
             </UncontrolledDropdown>
+            <NavItem>
+              <NavLink><i className="fa fa-bell"></i></NavLink>
+            </NavItem>
           </Nav>
       </Navbar>
     </Fragment>

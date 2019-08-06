@@ -23,9 +23,9 @@ const Menu = () => {
               <NavLink className='link-menu' href="#"><i className="fa fa-cog"></i></NavLink>
             </NavItem>
          </Nav>
-         <Nav className='menu-end mb-auto'>
-           <NavItem className='item-menu'>
-             <NavLink className='link-menu' href="#"><i className="fa fa-home"></i></NavLink>
+         <Nav vertical className='menu-end pb-auto'>
+           <NavItem className='item-menu-end'>
+             <NavLink className='link-menu' href="#"><i className="fa fa-power-off"></i></NavLink>
            </NavItem>
          </Nav>
 
