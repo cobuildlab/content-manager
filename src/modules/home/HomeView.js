@@ -13,8 +13,6 @@ class HomeView extends Component {
       
         <div className='dashboard-container'>
               <DashborNav/>
-              <InstagramBar/>
-              <Facebook/>           
         </div>
    
     )

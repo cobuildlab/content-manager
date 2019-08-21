@@ -12,7 +12,7 @@ import SingUpView from './modules/landingpage/singup/SingUpView';
 import { Auth } from './routes/auth';
 import history from './shared/history'
 import {HomeView} from './modules/home/HomeView';
-
+import Calendar from './modules/calendar/calendar'
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
 
@@ -26,6 +26,7 @@ const renderContent = () => {
         <Route path='/login' component={LoginView} />
         <Route path='/singup' component={SingUpView} />
         <Route path='/dashboard' component={HomeView} />
+        <Route path='/calendar' component={Calendar}/>
       </Switch>
     </AsyncContent>
   );

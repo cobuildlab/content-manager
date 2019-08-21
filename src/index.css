@@ -43,7 +43,9 @@ code {
 }
 
 
-
+li{
+  list-style: none;
+}
 /* DASHBOARD */
 .dashboard-container{
   background-color: #32393F;
@@ -101,4 +103,7 @@ code {
   top: 8px;
   left: 60px;
 }
+
+
+
 

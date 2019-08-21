@@ -1,0 +1,34 @@
+.calendar-container{
+    background-color: #1F2327;
+    height: 1000px;
+    
+  }
+  
+  .calendar-nav{
+      position: fixed;
+      width: 100px;
+      height: 100%;
+      background: #32393F;
+      text-align: center;
+      color: #B8C5D3;
+      font-size: 25px;
+      left: 60px;
+      
+  }
+  
+
+.div-calendar{
+    border: 1px solid white;
+    width: 56%;
+    height: 100%;
+}
+
+
+.div-calendar div{
+    margin: 0.8em ;
+    border: 1px solid black;
+    height: 80px;
+    width: 80px;
+}
+
+

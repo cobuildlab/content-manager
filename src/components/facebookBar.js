@@ -1,4 +1,4 @@
-import React,{ Fragment }  from 'react'
+import React  from 'react'
 import Facebook from '../assets/ico/facebook.svg'
 
 const FacebookBar = ()=>{
