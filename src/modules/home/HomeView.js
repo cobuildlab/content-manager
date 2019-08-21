@@ -1,18 +1,24 @@
-import React, {Fragment} from 'react';
-import Header from '../../components/Header'
-import Menu from '../../components/Menu'
-import {BarTittle} from './components/Bartittle'
+import React,{ Component  } from 'react';
+import DashborNav from '../../components/dashboardNav'
+import InstagramBar from '../../components/instagramBar'
+import Facebook from '../../components/facebookBar'
 
-const HomeView = () => {
-  return(
-    <Fragment >
-      <Header />
-      <Menu />
-      <div className='main'>
-      <BarTittle  name="@LoremIpsum" post='100' mentions="30"/>
-      </div>
-    </Fragment>
-  )
+class HomeView extends Component {
+  constructor(props){
+    super(props)
+  }
+
+  render(){
+    return(
+
+        <div className='dashboard-container'>
+              <DashborNav/>
+              <InstagramBar/>
+              <Facebook/>
+        </div>
+
+    )
+  }
 }
 
 export {HomeView}

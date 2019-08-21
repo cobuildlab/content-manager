@@ -17,7 +17,8 @@ const {
   REACT_APP_8BASE_API_ENDPOINT,
 } = process.env;
 
-//conect 8base authenticated
+
+
 export const auth0WebClient = new WebAuth0AuthClient({
   domain: REACT_APP_DOMAIN,
   clientId: REACT_APP_CLIENT_ID,

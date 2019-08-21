@@ -42,12 +42,61 @@ code {
     -webkit-text-fill-color: #B8C5D3;
 }
 
-.main{
+
+/* DASHBOARD */
+.dashboard-container{
+  background-color: #32393F;
+  height: 1000px;
+
+}
+
+.dashboard-nav{
+  position: fixed;
+  width: 60px;
   height: 100%;
-  background-color: #2F2F2F;
-    margin-left: 50px;
-    padding: 0px 10px;
-    color: #B8C5D3;
-    width: 100%;
-    position: fixed;
+  background: #1F2327;
+  text-align: center;
+
+}
+
+.dashboard-nav li{
+  margin: .4em 0;
+  padding: 10px 0;
+
+}
+
+.dashboard-nav li img {
+  cursor: pointer;
+}
+
+
+.logout-icon{
+  position: absolute;
+  left: 12px;
+  bottom: 30px;
+
+}
+
+
+/* Social Bar */
+
+.social-bar1{
+  width: 20%;
+  height: 40px;
+  background-color: #B8C5D3;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  left: 15px;
+
+}
+
+.social-bar2{
+  width: 30%;
+  height: 40px;
+  background-color: #65798C;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  left: 60px;
 }
