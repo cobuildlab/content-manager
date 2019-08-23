@@ -5,7 +5,7 @@ const weeks = ['Jan','Feb','Sea','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'
 const CalendarNav = ()=>{
 
     return(
-        <div className='calendar-nav d-flex flex-column justify-content-around'>
+        <div className='calendar-nav d-flex flex-column text-center '>
             
                 {weeks.map((value,key)=>{
                    return <li key={key}>{value}</li>

@@ -1,4 +1,4 @@
-import React,{ Fragment }  from 'react'
+import React,{  }  from 'react'
 import Instagram from '../assets/ico/Instagram.svg'
 
 const InstagramBar = ()=>{

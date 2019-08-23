@@ -1,34 +1,58 @@
 .calendar-container{
     background-color: #1F2327;
-    height: 1000px;
+    height: 949px;
     
-  }
-  
-  .calendar-nav{
-      position: fixed;
-      width: 100px;
-      height: 100%;
-      background: #32393F;
-      text-align: center;
-      color: #B8C5D3;
-      font-size: 25px;
-      left: 60px;
-      
-  }
-  
+}
 
-.div-calendar{
-    border: 1px solid white;
-    width: 56%;
+.calendar-nav{
+    width: 100px;
     height: 100%;
-}
+    background: #32393F;
+    color: #B8C5D3;
+    font-size: 25px;
+  }
+
+  .calendar-nav li{
+    margin: 30px 0;
+  }
 
 
-.div-calendar div{
-    margin: 0.8em ;
-    border: 1px solid black;
-    height: 80px;
-    width: 80px;
-}
+  .calendar-div{
+      margin: 50px 0 0 40px;
+      width: 900px;
+      /* border: 1px solid white; */
+  }
+
+  .new-post{
+      width: 100px;
+      height: 45px;
+      background-color: #B8C5D3;
+      color: #32393F;
+      border-radius:7px;
+    }
+
+    .div-post{
+        margin: 30px;
+    }
+
+    .div-wekks{
+        margin: 0 0 30px 0;
+        color: #B8C5D3;
+        font-size: 35px
+    }
+      
+
+    .div-days{
+        width: 110px;
+        height: 100px;
+        background-color: #32393F;
+        border-radius: 5px;
+        font-size: 25px;
+        /* border: 1px solid white; */
+        margin: 9px;
+        
+    }
+
+
 
 
