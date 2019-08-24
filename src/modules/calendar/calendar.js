@@ -3,18 +3,94 @@ import DashborNav from '../../components/dashboardNav'
 import CalendarNav from './calendarNav'
 import './calendar.css'
 import CalendarIco from  '../../assets/ico/calendar.svg'
+import Block from '../../assets/ico/block.svg'
+import moment from 'moment'
 
-const momentFake = [ 1 , 2 , 3 , 4 , 5 , 6, 7 , 8 , 9 ,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-const momentFakeWekks=['S','M','T','W','T','F','S']
+
+
+
+
+
+
+
+const weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
+const weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+const months = moment.months();
 
 
 
 class Calendar extends Component{
     constructor(props){
         super(props)
+        this.state={
+            dateContext: moment(),
+            // today: moment(),
+
+        }
+    }
+    
+
+
+    year = () => {
+        return this.state.dateContext.format("Y");
     }
 
+    month = () => {
+        return this.state.dateContext.format("MMMM");
+    }
+
+    daysInMonth = () => {
+        return this.state.dateContext.daysInMonth();
+    }
+
+    currentDate = () => {
+        return this.state.dateContext.get("date");
+    }
+
+    currentDay = () => {
+        return this.state.dateContext.format("D");
+    }
+
+
+    firstDayOfMonth = () => {
+        const dateContext = this.state.dateContext;
+        const firstDay = moment(dateContext).startOf('month').format('d'); // Day of week 0...1..5...6
+        return firstDay;
+    }
+    
+     
+    
     render(){
+
+        // console.log('YEAR : ',moment().format('Y'))
+        // console.log('MONTH :',moment().format('MMM'))
+        // console.log('DAYSINMONTH :',moment().daysInMonth())
+        // console.log('CURRENTDATE :',moment().get('date'))
+        // console.log('CURRETDAY :',moment().format('D'))
+
+
+        const blanks = [];
+
+        for (let i = 0; i < this.firstDayOfMonth(); i++) {
+           
+            blanks.push(" ");
+
+        }
+
+        console.log("blanks: ", blanks);
+
+        const daysInMonth = [];
+
+
+        for (let d = 1; d <= this.daysInMonth(); d++) {
+            
+            daysInMonth.push(d);
+
+        }
+
+
+        console.log("days: ", daysInMonth);
+        
         return (
             <div className='calendar-container d-flex'>
                 
@@ -28,20 +104,27 @@ class Calendar extends Component{
                             NEW POST 
                         </button>
                         <div>
-                            <img src={CalendarIco} alt='calendar ico'/>
+                            <img src={CalendarIco} height='40' alt='calendar ico'/>
+                            <img src={Block} alt='block ico'></img>
                         </div>
                     </div>
 
                     <div className=' d-flex justify-content-around '>
-                        {momentFakeWekks.map((value,item)=>{
+                        {  weekdaysShort.map((value,item)=>{
                             return <div className='div-wekks' key={item}>{value}</div>
                         })}
                     </div>
 
                     <div className='d-flex flex-wrap '>
-                        {momentFake.map((value,index)=>{
+
+                        {blanks.map((value,index)=>{
+                            return <div className='text-white text-center div-days' key={index} >{value}</div>
+                        })}
+
+                        {daysInMonth.map((value,index)=>{
                             return <div className='text-white text-center div-days' key={index} >{value}</div>
                         })} 
+                        
 
                     </div>
                 </div>
