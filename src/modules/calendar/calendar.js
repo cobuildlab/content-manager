@@ -56,15 +56,32 @@ class Calendar extends Component{
         const dateContext = this.state.dateContext;
         const firstDay = moment(dateContext).startOf('month').format('d'); // Day of week 0...1..5...6
         return firstDay;
+
     }
     
+
+
+
+    SelectMonth=(data)=>{
+
+        let monthNo = months.indexOf(data);
+        let dateContext = Object.assign({}, this.state.dateContext);
+        dateContext = moment(dateContext).set("months", monthNo);
+      
+        this.setState({
+            dateContext: dateContext
+        });
+
+
+
+    }
      
     
     render(){
 
         // console.log('YEAR : ',moment().format('Y'))
         // console.log('MONTH :',moment().format('MMM'))
-        // console.log('DAYSINMONTH :',moment().daysInMonth())
+        console.log('DAYSINMONTH :',moment().daysInMonth())
         // console.log('CURRENTDATE :',moment().get('date'))
         // console.log('CURRETDAY :',moment().format('D'))
 
@@ -72,31 +89,29 @@ class Calendar extends Component{
         const blanks = [];
 
         for (let i = 0; i < this.firstDayOfMonth(); i++) {
-           
             blanks.push(" ");
-
         }
+        // console.log("blanks: ", blanks);
 
-        console.log("blanks: ", blanks);
 
         const daysInMonth = [];
 
-
         for (let d = 1; d <= this.daysInMonth(); d++) {
-            
             daysInMonth.push(d);
 
         }
-
-
         console.log("days: ", daysInMonth);
         
+        const calendarShow = [ ...blanks, ...daysInMonth]
+        
+
         return (
             <div className='calendar-container d-flex'>
                 
                 <DashborNav/>
 
-                <CalendarNav/>
+                <CalendarNav log={this.SelectMonth} data={months}/>
+                
 
                 <div className='d-flex flex-column calendar-div' >
                     <div className='d-flex div-post justify-content-between'>
@@ -109,6 +124,7 @@ class Calendar extends Component{
                         </div>
                     </div>
 
+
                     <div className=' d-flex justify-content-around '>
                         {  weekdaysShort.map((value,item)=>{
                             return <div className='div-wekks' key={item}>{value}</div>
@@ -117,15 +133,21 @@ class Calendar extends Component{
 
                     <div className='d-flex flex-wrap '>
 
-                        {blanks.map((value,index)=>{
-                            return <div className='text-white text-center div-days' key={index} >{value}</div>
+                        {calendarShow.map((value,index)=>{
+                                if(value < 10){
+                                        return <div className='text-white div-days d-flex justify-content-center align-items-center
+                                    }' key={index} >
+                                                    {`0${value}`}
+                                            </div>
+                                }else{
+                                        return <div className='text-white div-days d-flex justify-content-center align-items-center
+                                    }' key={index} >
+                                                    {value}
+                                            </div>
+                                }
+                                
                         })}
-
-                        {daysInMonth.map((value,index)=>{
-                            return <div className='text-white text-center div-days' key={index} >{value}</div>
-                        })} 
                         
-
                     </div>
                 </div>
                 

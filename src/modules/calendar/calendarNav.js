@@ -1,14 +1,20 @@
 import React from 'react';
 
-const weeks = ['Jan','Feb','Sea','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov' ,'Dec']
+// const weeks = ['Jan','Feb','Sea','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov' ,'Dec']
 
-const CalendarNav = ()=>{
+const CalendarNav = (props)=>{
+
+    const { data,log} = props
+    console.log('props for calendarNav',props)
+    
 
     return(
-        <div className='calendar-nav d-flex flex-column text-center '>
+        <div className='calendar-nav d-flex flex-column text-center  '>
             
-                {weeks.map((value,key)=>{
-                   return <li key={key}>{value}</li>
+                {data.map((value,key)=>{
+                   return <li  onClick={(e)=>props.log(value)} key={key}>   
+                            {value.substr(0,3)}
+                          </li>
                 })}
         
         </div>
