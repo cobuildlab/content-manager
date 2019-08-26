@@ -62,17 +62,15 @@ class Calendar extends Component{
 
 
 
-    SelectMonth=(data)=>{
+    selectMonth=(month)=>{
 
-        let monthNo = months.indexOf(data);
+        let monthNo = months.indexOf(month);
         let dateContext = Object.assign({}, this.state.dateContext);
-        dateContext = moment(dateContext).set("months", monthNo);
+        dateContext = moment(dateContext).set("month", monthNo);
       
         this.setState({
             dateContext: dateContext
         });
-
-
 
     }
      
@@ -81,7 +79,7 @@ class Calendar extends Component{
 
         // console.log('YEAR : ',moment().format('Y'))
         // console.log('MONTH :',moment().format('MMM'))
-        console.log('DAYSINMONTH :',moment().daysInMonth())
+        // console.log('DAYSINMONTH :',moment().daysInMonth())
         // console.log('CURRENTDATE :',moment().get('date'))
         // console.log('CURRETDAY :',moment().format('D'))
 
@@ -100,7 +98,7 @@ class Calendar extends Component{
             daysInMonth.push(d);
 
         }
-        console.log("days: ", daysInMonth);
+        // console.log("days: ", daysInMonth);
         
         const calendarShow = [ ...blanks, ...daysInMonth]
         
@@ -110,7 +108,7 @@ class Calendar extends Component{
                 
                 <DashborNav/>
 
-                <CalendarNav log={this.SelectMonth} data={months}/>
+                <CalendarNav change={this.selectMonth} data={months}/>
                 
 
                 <div className='d-flex flex-column calendar-div' >

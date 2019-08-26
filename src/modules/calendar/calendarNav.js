@@ -4,15 +4,12 @@ import React from 'react';
 
 const CalendarNav = (props)=>{
 
-    const { data,log} = props
-    console.log('props for calendarNav',props)
-    
-
+    const { data,change } = props
+ 
     return(
         <div className='calendar-nav d-flex flex-column text-center  '>
-            
                 {data.map((value,key)=>{
-                   return <li  onClick={(e)=>props.log(value)} key={key}>   
+                   return <li  onClick={(e)=>change(value)} key={key}>   
                             {value.substr(0,3)}
                           </li>
                 })}
