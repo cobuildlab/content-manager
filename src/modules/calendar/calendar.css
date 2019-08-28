@@ -19,7 +19,7 @@
 
 
   .calendar-div{
-      margin: 50px 0 0 40px;
+      margin: 50px 0 0 20px;
       width: 900px;
       /* border: 1px solid white; */
   }
@@ -58,6 +58,53 @@
         
     }
 
+    .status-post{
+        width: 700px;
+        /* border: 1px solid white; */
+        margin: 15px 0 0px 10px;
+    }
 
+    .status-post h2{
+        margin-bottom: 10px;
+    }
+
+    .status-post div {
+        margin: 0 70px 10px 0 ;
+    }
+
+    .ico-general{
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .border-ico{
+        border:2px solid #65798C;
+        
+    }
+
+    .ico-color-1{
+        background-color: #65798C;
+       
+    }
+    .force-width{
+        width: 55px ;
+    }
+
+    .ico-color-2{
+        background-color: #32393F;
+         width: 55px;  
+        
+    }
+
+    .ico-color-3{
+        background-color: #B8C5D3;
+        width: 55px;
+    }
+
+
+    hr{
+        background-color: #65798C;
+    }
 
 
