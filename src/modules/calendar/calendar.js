@@ -5,7 +5,12 @@ import './calendar.css'
 import CalendarIco from  '../../assets/ico/calendar.svg'
 import Block from '../../assets/ico/block.svg'
 import moment from 'moment'
-
+import All from '../../assets/ico/all.svg'
+import Pause from '../../assets/ico/pause.svg'
+import Play from '../../assets/ico/play.svg'
+import Create from '../../assets/ico/create.svg'
+import Facebook from '../../assets/ico/facebook.svg'
+import Twitter from '../../assets/ico/twitter.svg'
 
 
 
@@ -147,6 +152,236 @@ class Calendar extends Component{
                         })}
                         
                     </div>
+                </div>
+
+                <div className='status-post'>
+
+                    <h2 className='text-white'>STATUS POST</h2>
+
+                    <div className='d-flex '>
+
+                        <div className='ico-general ico-color-1 d-flex justify-content-center align-items-center '>
+                            <img src={All} alt='all ico'/>
+                        </div>
+
+                        <div className='ico-general border-ico d-flex justify-content-center align-items-center ' >
+                            <img  src={Create} alt='create ico'/>
+                        </div>
+
+                        <div  className='ico-general  border-ico d-flex justify-content-center align-items-center' >
+                            <img src={Pause} alt='pause ico'/>
+                        </div>
+
+                        <div className='ico-general  border-ico d-flex justify-content-center align-items-center ' >
+                            <img src={Play} alt='play ico'/>
+                        </div>
+                        
+                    </div>
+
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-3 d-flex justify-content-center align-items-center'>
+                            <img src={Create} alt='all ico'/>                    
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+
+                    </div>
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-2 d-flex justify-content-center align-items-center'>
+                            <img src={Pause} alt='pause ico'/>
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-1 d-flex force-width justify-content-center align-items-center'>
+                            <img src={Play} alt='pause ico'/>
+                        </div>  
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+                    <hr/>
+                    
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-3 d-flex justify-content-center align-items-center'>
+                            <img src={Create} alt='all ico'/>                    
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+
+                    </div>
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-2 d-flex justify-content-center align-items-center'>
+                            <img src={Pause} alt='pause ico'/>
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-1 force-width force-width d-flex justify-content-center align-items-center'>
+                            <img src={Play} alt='pause ico'/>
+                        </div>  
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+                    <hr/>
+
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-3   d-flex justify-content-center align-items-center'>
+                            <img src={Create} alt='all ico'/>                    
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+
+                    </div>
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-2 d-flex justify-content-center align-items-center'>
+                            <img src={Pause} alt='pause ico'/>
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-1 force-width d-flex justify-content-center align-items-center'>
+                            <img src={Play} alt='pause ico'/>
+                        </div>  
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className=' ico-general ico-color-3 d-flex justify-content-center align-items-center'>
+                            <img src={Create} alt='all ico'/>                    
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+
+                    </div>
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-2 d-flex justify-content-center align-items-center'>
+                            <img src={Pause} alt='pause ico'/>
+                        </div>
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+
+                    <hr/>
+                    <div className='d-flex'>
+                        <div className='ico-general ico-color-1 force-width d-flex justify-content-center align-items-center'>
+                            <img src={Play} alt='pause ico'/>
+                        </div>  
+                        <div className='text-white'>
+                            <span>Aug08/2019</span>
+                            <br/>
+                            <img src={Facebook} alt='facebook ico'/>
+                            <img src={Twitter} alt='twitter ico'/>
+                        </div>
+                        <p className='text-white' >
+                            lectus quis malesuada malesuada, nisi est congue ligula, sed aliquet lectus sapien eu quam. 
+                        </p>
+                    </div>
+
+
+
+
+
                 </div>
                 
             </div>
