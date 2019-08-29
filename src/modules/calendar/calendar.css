@@ -108,3 +108,35 @@
     }
 
 
+
+
+
+    /* *********************STYLE POSTS *************************/
+
+    .post-container{
+        width: 100%
+    
+    }
+    
+    .post-container div{
+        margin-bottom: 30px;
+    }
+    .font-monht{
+        font-size: 40px;
+        color: #B8C5D3;
+        margin-bottom: 30px;
+
+    }
+    .post-card{
+        width: 200px;
+        height: 220px;
+        /* border: 1px solid white; */
+        margin: 12px 25px 0 0 ;
+    }
+
+    .background-card  {
+        background: #32393F;
+
+    }
+
+  
