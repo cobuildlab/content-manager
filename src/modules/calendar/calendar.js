@@ -12,6 +12,7 @@ import Create from '../../assets/ico/create.svg'
 import Facebook from '../../assets/ico/facebook.svg'
 import Twitter from '../../assets/ico/twitter.svg'
 import Posts from './components/posts'
+import NewPost from './components/newPost'
 
 
 
@@ -31,9 +32,8 @@ class Calendar extends Component{
         this.state={
             dateContext: moment(),
             // today: moment(),
-            posts: true,
-            newPost: false,
-
+            posts: false,
+            newPost: true,
         }
     }
     
@@ -81,12 +81,18 @@ class Calendar extends Component{
     }
 
     onChangePosts=()=>{
-        const {posts} = this.state
+     
         this.setState({posts:true})
     }
     
+    onChangeNewPost= ()=>{
+        this.setState({newPost:true})
+        // this.props.history.push
+        
+    }
+    
     onChangeCalendar=()=>{
-        const { posts } = this.state
+     
         this.setState({posts:false})
     }
      
@@ -114,11 +120,18 @@ class Calendar extends Component{
             daysInMonth.push(d);
 
         }
+
         // console.log("days: ", daysInMonth);
         
         const calendarShow = [ ...blanks, ...daysInMonth]
         
         const { posts } = this.state
+
+        if(this.state.newPost){
+            return (              
+                <NewPost/>
+            )
+        }
         return (
       
             <div className='calendar-container d-flex'>
@@ -126,15 +139,13 @@ class Calendar extends Component{
                 <DashborNav/>
 
                 <CalendarNav change={this.selectMonth} data={months}/>
-
-                
                 { 
-                        posts === true ?
+                        posts  ?
                                 (
                                     <Fragment>
                                         <div className='d-flex flex-column post-container div-post ' >
                                             <div className='d-flex justify-content-between'>
-                                                <button className=' new-post' >
+                                                <button onClick={this.onChangeNewPost} className='new-post' >
                                                     NEW POST 
                                                 </button>
                                                 <div>
@@ -152,8 +163,8 @@ class Calendar extends Component{
                     <div className='d-flex flex-column calendar-div' >
         
                         <div className='d-flex div-post justify-content-between'>
-                            <button className='new-post' >
-                                NEW POST 
+                            <button onClick={this.onChangeNewPost} className='new-post' >
+                                    NEW POST  
                             </button>
                             <div>
                                 <img src={CalendarIco} height='40' alt='calendar ico'/>

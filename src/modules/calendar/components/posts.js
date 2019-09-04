@@ -1,7 +1,7 @@
 import React from 'react'
 import Plus from '../../../assets/ico/plus.svg'
 
-const plus = <img src={Plus}/>
+const plus = <img src={Plus} alt='plus ico '/>
  
 const postFake = ['','','','','','','','','','','',plus]
 
@@ -9,7 +9,7 @@ const postFake = ['','','','','','','','','','','',plus]
 
 const Posts = (props)=> {
 
-    console.log(props)
+    console.log(' PROPS FROM COMPONENT POSTS:', props)
 
     return (
         <div className='d-flex flex-column' >
