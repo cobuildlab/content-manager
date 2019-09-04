@@ -106,3 +106,16 @@ li{
 
 
 
+/* *********************MEDIA BAR ************************************** */
+
+.media-bar{
+  width: 150px;
+  height: 40px;
+  background-color: #B8C5D3;
+  color: #65798C;
+  /* border: 1px solid white; */
+  border-radius: 20px;
+}
+
+
+

@@ -108,3 +108,82 @@
     }
 
 
+
+
+
+    /* *********************STYLE POSTS *************************/
+
+    .post-container{
+        width: 100%
+    
+    }
+    
+    .post-container div{
+        margin-bottom: 30px;
+    }
+    .font-monht{
+        font-size: 40px;
+        color: #B8C5D3;
+        margin-bottom: 30px;
+
+    }
+    .post-card{
+        width: 200px;
+        height: 220px;
+        /* border: 1px solid white; */
+        margin: 12px 25px 0 0 ;
+    }
+
+    .background-card  {
+        background: #32393F;
+
+    }
+
+  
+
+
+    /* *************************************8 STYLE NEW POSTS ***************************8 */
+
+    .container-newPost{
+        width: 100%;
+    }
+
+    .div-newPost{
+        width: 100%;
+        height: 90px;
+        background-color:#32393F;
+        color: #B8C5D3;
+        font-size: 40px
+    }
+    .div-newPost h2{
+        margin: 35px;
+    }
+
+
+    .div-information{
+        /* border: 1px solid white ; */
+        height: 100%;
+        width: 100%;
+    }
+    
+    .div-information div{
+        margin: 30px;
+    }
+
+    .div-typePost {
+        /* border: 1px solid white; */
+        width: 800px;
+        height: 600px;
+    }
+
+    .div-preview{
+        /* border: 1px solid white; */
+        width: 800px;
+        height: 600px;
+    }
+
+    .div-button{
+        border: 1px solid white;
+        width: 300px;
+        height: 50px
+    }
