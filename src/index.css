@@ -109,13 +109,22 @@ li{
 /* *********************MEDIA BAR ************************************** */
 
 .media-bar{
-  width: 150px;
-  height: 40px;
-  background-color: #B8C5D3;
+
+  width: 160px;
+  height: 35px;
   color: #65798C;
-  /* border: 1px solid white; */
+  border: 1px solid #B8C5D3;
+  /* background-color: #B8C5D3; */
   border-radius: 20px;
+  cursor: pointer;
+
 }
+.media-bar-onclik{
+  background-color: #B8C5D3;
+
+}
+
+
 
 
 

@@ -161,23 +161,25 @@
 
 
     .div-information{
-        /* border: 1px solid white ; */
+        border: 1px solid white ;
         height: 100%;
-        width: 100%;
+        width: 100%
+
     }
-    
-    .div-information div{
-        margin: 30px;
-    }
+ 
 
     .div-typePost {
-        /* border: 1px solid white; */
         width: 800px;
         height: 600px;
+        border: 1px solid white;
+        padding: 20px
+        
+
+
     }
 
     .div-preview{
-        /* border: 1px solid white; */
+        border: 1px solid white;
         width: 800px;
         height: 600px;
     }
