@@ -9,6 +9,9 @@ import FacebookIco from '../../../assets/ico/facebook.svg'
 import TwitterIco from '../../../assets/ico/twitter.svg'
 import InstagramIco from '../../../assets/ico/Instagram.svg' 
 import LinkedinIco from '../../../assets/ico/linkedin.svg' 
+import MovilIco from '../../../assets/ico/movil.svg'
+import DesktopIco from '../../../assets/ico/desktop.svg'
+
 
 
 
@@ -139,7 +142,14 @@ const newPost=()=>{
 
                                 </div>
                                  <div className='div-preview' >
-
+                                     <h3 className='color-fontPost title-post'>Preview</h3>
+                                     <div className='preview-Info'>
+                                         
+                                     </div>
+                                    <div className='preview-bar d-flex justify-content-center align-items-center'>
+                                        <img src={DesktopIco} alt='desktop ico'/>
+                                        <img src={MovilIco} alt='movil ico'/>
+                                    </div>
                                  </div>
 
                         
