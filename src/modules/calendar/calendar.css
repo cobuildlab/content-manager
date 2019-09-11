@@ -1,6 +1,7 @@
 .calendar-container{
     background-color: #1F2327;
-    height: 949px;
+    height: 2000px;
+    /* height: 100%; */
     
 }
 
@@ -161,7 +162,7 @@
 
 
     .div-information{
-        border: 1px solid white ;
+        /* border: 1px solid white ; */
         height: 100%;
         width: 100%
 
@@ -169,23 +170,75 @@
  
 
     .div-typePost {
-        width: 800px;
-        height: 600px;
-        border: 1px solid white;
-        padding: 20px
-        
+        width: 700px;
+        height: 700px;
+        /* border: 1px solid white; */
+        padding: 20px;
+        margin: 30px 0 0 30px; 
 
 
     }
 
     .div-preview{
-        border: 1px solid white;
+        /* border: 1px solid white; */
         width: 800px;
         height: 600px;
+        margin: 30px 30px 0 0;
+    }
+    
+    .preview-Info{
+        height: 450px;
+        width: 780px;
+        margin:0 10px 10px 10px ;
+        border: 1px solid white;
     }
 
-    .div-button{
-        border: 1px solid white;
-        width: 300px;
-        height: 50px
+    .preview-bar{
+        background: #32393F;
+        height: 50px;
+        border-radius: 0 0 25px 25px;
     }
+
+
+    .button-post{
+        border: 1px solid white;
+        border-radius: 7px;
+        width: 200px;
+        height: 40px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 100px;
+        right: 800px; 
+
+    }
+
+    .title-post{
+        font-size: 20px;
+        margin: 30px 0 30px 0;
+    }
+    
+    .color-fontPost{
+        color: #B8C5D3;
+        
+    }
+
+
+    input {
+        background-color: #5D646B;
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        margin: 10px !important;
+    }
+    
+
+    textarea{
+        background: transparent;
+        border: none;
+        width: 100%;
+        height: 100px;
+
+    }
+    
+ 

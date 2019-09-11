@@ -8,9 +8,15 @@ import GifIco from '../../../assets/ico/gif.svg'
 import FacebookIco from '../../../assets/ico/facebook.svg'
 import TwitterIco from '../../../assets/ico/twitter.svg'
 import InstagramIco from '../../../assets/ico/Instagram.svg' 
+import LinkedinIco from '../../../assets/ico/linkedin.svg' 
+import MovilIco from '../../../assets/ico/movil.svg'
+import DesktopIco from '../../../assets/ico/desktop.svg'
+
+
 
 
 const newPost=()=>{
+
     return (
         <div className='calendar-container d-flex'>
             <DashborNav/>
@@ -22,7 +28,7 @@ const newPost=()=>{
                           </div>
                             <div className='div-information d-flex justify-content-between flex-wrap  '>
                                  <div className='div-typePost'>
-                                     <h3 className='text-white'>
+                                     <h3 className='title-post color-fontPost'>
                                          Type of post
                                          
                                      </h3>
@@ -30,7 +36,7 @@ const newPost=()=>{
                                        
                                         <MediaBar
                                                 
-                                           ico={TextIco} 
+                                            ico={TextIco} 
                                             icoDescription={'text ico'}
                                             text={'text'} 
                                                
@@ -43,7 +49,7 @@ const newPost=()=>{
                                             icoDescription={'picture ico'}
                                             text={'picture(s)'} 
                                              
-                                             />
+                                            />
 
                                         <MediaBar
 
@@ -59,15 +65,15 @@ const newPost=()=>{
                                             icoDescription={'gif ico'}
                                             text={'Animate Gif'} 
                                              
-                                     />
+                                         />
                                         
                                      </div>
 
-                                     <h3 className='text-white' >
+                                     <h3 className='title-post color-fontPost' >
                                          Social Network
                                      </h3>
 
-                                     <div className='d-flex'>
+                                     <div className='d-flex flex-wrap'>
 
                                         <MediaBar
                                         
@@ -87,19 +93,66 @@ const newPost=()=>{
                                             icoDescription={'instagram ico'}
     
                                          />
+                                        <MediaBar
+                                            
+                                            ico={LinkedinIco} 
+                                            icoDescription={'linkedin ico'}
+
+                                        />
+
+                                     </div>
+                                     <div  >
+                                         <h3 className='title-post color-fontPost'>
+                                             Content
+                                         </h3>
+
+                                        <form className='d-flex flex-column flex-wrap'>                                         
+
+                                                <label className='color-fontPost'>
+                                                        Post Text
+                                                    <textarea>
+
+                                                    </textarea>
+                                                    <hr/> 
+                                                    
+                                                </label>
+                                                <div className='d-flex justify-content-around ' >
+                                                
+                                                    <label className='d-flex flex-column color-fontPost'>
+                                                        Date  
+                                                        <input type='date' name='date'/>
+                                                    </label>
+
+                                                
+
+                                                    <label className='d-flex flex-column color-fontPost'>
+                                                        Time
+                                                        <input type='time' name='time'/>
+                                                    </label>
+                                        
+                                                </div>
+
+
+                                            <button className='button-post color-fontPost'>Save to calendar</button>
+                                        </form>
+                                               
 
                                      </div>
 
 
                                 </div>
                                  <div className='div-preview' >
-
+                                     <h3 className='color-fontPost title-post'>Preview</h3>
+                                     <div className='preview-Info'>
+                                         
+                                     </div>
+                                    <div className='preview-bar d-flex justify-content-center align-items-center'>
+                                        <img src={DesktopIco} alt='desktop ico'/>
+                                        <img src={MovilIco} alt='movil ico'/>
+                                    </div>
                                  </div>
 
-                                 
-                                 <div className='div-button text-white' >
-                                         SAVE TO CALENDAR
-                                 </div>
+                        
 
                              </div>
                 </div>
