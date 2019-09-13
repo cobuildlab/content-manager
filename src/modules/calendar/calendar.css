@@ -147,6 +147,7 @@
 
     .container-newPost{
         width: 100%;
+        /* margin-left: 80px; */
     }
 
     .div-newPost{
@@ -162,7 +163,7 @@
 
 
     .div-information{
-        /* border: 1px solid white ; */
+        border: 1px solid white ;
         height: 100%;
         width: 100%
 
@@ -170,28 +171,38 @@
  
 
     .div-typePost {
-        width: 700px;
+        width: 40%;
         height: 700px;
         /* border: 1px solid white; */
         padding: 20px;
-        margin: 30px 0 0 30px; 
+        /* margin: 30px 0 0 30px;  */
 
 
     }
+    
+    @media (max-width: 600px){
+        .div-typePost {
+            width: 400px;
+            height: 700px;
+            padding: 20px;
+        }
+    }
+ 
 
     .div-preview{
-        /* border: 1px solid white; */
-        width: 800px;
+        border: 1px solid white;
+        width: 40%;
         height: 600px;
-        margin: 30px 30px 0 0;
+        /* margin: 30px 30px 0 0; */
     }
     
     .preview-Info{
         height: 450px;
-        width: 780px;
-        margin:0 10px 10px 10px ;
+        width: 96%;
         border: 1px solid white;
+        /* margin-left: 2.5em; */
     }
+
 
     .preview-bar{
         background: #32393F;
@@ -235,7 +246,7 @@
 
     textarea{
         background: transparent;
-        border: none;
+        /* border: none; */
         width: 100%;
         height: 100px;
 

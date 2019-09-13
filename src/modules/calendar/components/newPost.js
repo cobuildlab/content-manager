@@ -18,7 +18,7 @@ import DesktopIco from '../../../assets/ico/desktop.svg'
 const newPost=()=>{
 
     return (
-        <div className='calendar-container d-flex'>
+        <div className='calendar-container d-flex '>
             <DashborNav/>
             <div className='d-flex flex-column  container-newPost'>
                           <div className='div-newPost' >
@@ -26,12 +26,13 @@ const newPost=()=>{
                                      New Post
                                  </h2>
                           </div>
-                            <div className='div-information d-flex justify-content-between flex-wrap  '>
+                            <div className='div-information d-flex flex-wrap justify-content-around '>
                                  <div className='div-typePost'>
                                      <h3 className='title-post color-fontPost'>
                                          Type of post
                                          
                                      </h3>
+                                     
                                      <div className='d-flex flex-wrap'>
                                        
                                         <MediaBar
@@ -101,22 +102,22 @@ const newPost=()=>{
                                         />
 
                                      </div>
-                                     <div  >
+                                     <div >
                                          <h3 className='title-post color-fontPost'>
                                              Content
                                          </h3>
 
                                         <form className='d-flex flex-column flex-wrap'>                                         
 
-                                                <label className='color-fontPost'>
-                                                        Post Text
+                                                <label className ='color-fontPost '>
+                                                        
                                                     <textarea>
 
                                                     </textarea>
-                                                    <hr/> 
+                                                    {/* <hr/>  */}
                                                     
                                                 </label>
-                                                <div className='d-flex justify-content-around ' >
+                                                {/* <div className='d-flex justify-content-around ' >
                                                 
                                                     <label className='d-flex flex-column color-fontPost'>
                                                         Date  
@@ -130,7 +131,7 @@ const newPost=()=>{
                                                         <input type='time' name='time'/>
                                                     </label>
                                         
-                                                </div>
+                                                </div> */}
 
 
                                             <button className='button-post color-fontPost'>Save to calendar</button>
@@ -141,10 +142,12 @@ const newPost=()=>{
 
 
                                 </div>
-                                 <div className='div-preview' >
+                                 <div className='div-preview ' >
                                      <h3 className='color-fontPost title-post'>Preview</h3>
-                                     <div className='preview-Info'>
-                                         
+                                     <div className='d-flex justify-content-center align-items-center'>
+                                        <div className='preview-Info'>
+                                            
+                                        </div>
                                      </div>
                                     <div className='preview-bar d-flex justify-content-center align-items-center'>
                                         <img src={DesktopIco} alt='desktop ico'/>
@@ -152,9 +155,9 @@ const newPost=()=>{
                                     </div>
                                  </div>
 
-                        
+                        </div>
 
-                             </div>
+                             
                 </div>
         </div>
     )

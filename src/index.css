@@ -56,9 +56,11 @@ li{
 }
 
 .dashboard-nav{
-  width: 60px;
+  width: 100px;
   height: 100%;
   background: #1F2327;
+  /* position: fixed; */
+  border: 1px solid white;
   
 }
 
@@ -73,8 +75,8 @@ li{
 
 
 .logout-icon{
-  position: absolute;
-  left: 12px;
+  position: fixed;
+  left: 30px;
   bottom: 20px;
 
 }

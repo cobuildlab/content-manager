@@ -9,7 +9,7 @@ import Logout from '../assets/ico/log-out.svg'
 
 const DashborNav = ()=>{
     return(
-        <div className='d-flex flex-column text-center dashboard-nav'>
+        <div className='d-flex flex-column text-center align-items-center dashboard-nav'>
                 <li>
                     <img src={Home} alt='home icon'/>
                 </li>
