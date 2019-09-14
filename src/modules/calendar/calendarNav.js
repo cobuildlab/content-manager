@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 
 // const weeks = ['Jan','Feb','Sea','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov' ,'Dec']
 
-const CalendarNav = (props)=>{
+const CalendarNav = props => {
+  const { data, change } = props;
 
-    const { data,change } = props
- 
-    return(
-        <div className='calendar-nav d-flex flex-column text-center  '>
-                {data.map((value,key)=>{
-                   return <li  onClick={(e)=>change(value)} key={key}>   
-                            {value.substr(0,3)}
-                          </li>
-                })}
-        
-        </div>
-    )
-}
+  return (
+    <div className="calendar-nav d-flex flex-column text-center  ">
+      {data.map((value, key) => {
+        return (
+          <li onClick={e => change(value)} key={key}>
+            {value.substr(0, 3)}
+          </li>
+        );
+      })}
+    </div>
+  );
+};
 
-export default CalendarNav
+export default CalendarNav;
