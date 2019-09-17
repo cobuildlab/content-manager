@@ -100,11 +100,10 @@ li {
 /* *********************MEDIA BAR ************************************** */
 
 .media-bar {
-  width: 100px;
+  width: 150px;
   height: 35px;
   color: #65798c;
   border: 1px solid #b8c5d3;
-  /* background-color: #B8C5D3; */
   border-radius: 20px;
   cursor: pointer;
 }

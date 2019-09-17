@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DashborNav from "../../../components/dashboardNav";
 import MediaBar from "../../../components/mediabar";
 import TextIco from "../../../assets/ico/text.svg";
@@ -26,38 +26,16 @@ const newPost = () => {
             <h3 className="title-post color-fontPost">Type of post</h3>
 
             <div className="d-flex flex-wrap">
-              <MediaBar
-                ico={TextIco}
-                icoDescription={"text ico"}
-                text={"text"}
-              />
-
-              <MediaBar
-                ico={PictureIco}
-                icoDescription={"picture ico"}
-                text={"picture(s)"}
-              />
-
-              <MediaBar
-                ico={VideoIco}
-                icoDescription={"video ico"}
-                text={"video"}
-              />
-
-              <MediaBar
-                ico={GifIco}
-                icoDescription={"gif ico"}
-                text={"Animate Gif"}
-              />
+              <MediaBar />
             </div>
 
             <h3 className="title-post color-fontPost">Social Network</h3>
 
             <div className="d-flex flex-wrap">
-              <MediaBar ico={FacebookIco} icoDescription={"facebook ico"} />
+              {/* <MediaBar ico={FacebookIco} icoDescription={"facebook ico"} />
               <MediaBar ico={TwitterIco} icoDescription={"twitter ico"} />
               <MediaBar ico={InstagramIco} icoDescription={"instagram ico"} />
-              <MediaBar ico={LinkedinIco} icoDescription={"linkedin ico"} />
+              <MediaBar ico={LinkedinIco} icoDescription={"linkedin ico"} /> */}
             </div>
             <div>
               <h3 className="title-post color-fontPost">Content</h3>
