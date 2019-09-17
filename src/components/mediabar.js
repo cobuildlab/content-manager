@@ -1,37 +1,8 @@
 import React, { useState, useEffect } from "react";
-import TextIco from "../assets/ico/text.svg";
-import PictureIco from "../assets/ico/picture.svg";
-import VideoIco from "../assets/ico/video.svg";
-import GifIco from "../assets/ico/gif.svg";
 
-const MediaBar = () => {
-  const data = [
-    {
-      ico: TextIco,
-      content: "text",
-      alt: "text ico",
-      active: true
-    },
-    {
-      ico: PictureIco,
-      content: "Pictore(s)",
-      alt: "picture ico",
-      active: false
-    },
-    {
-      ico: VideoIco,
-      content: "Video",
-      alt: "video ico",
-      active: false
-    },
-    {
-      ico: GifIco,
-      content: "Animate GIF",
-      alt: "gif ico",
-      active: false
-    }
-  ];
-
+const MediaBar = props => {
+  console.log(props.data);
+  const { data } = props;
   return (
     <div className="d-flex">
       {data.map((value, index) => (
