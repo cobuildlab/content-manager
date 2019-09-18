@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 
-const MediaBar = ({ ico, icoDescription, text }) => {
+const MediaBar = props => {
+  console.log(props.data);
+  const { data } = props;
   return (
-    <div
-      onClick={() => {
-        console.log();
-      }}
-      className={"media-bar d-flex justify-content-center align-items-center"}
-    >
-      <img src={ico} alt={icoDescription} />
+    <div className="d-flex">
+      {data.map((value, index) => (
+        <div
+          key={index}
+          className={`media-bar d-flex justify-content-center align-items-center ${
+            value.active === true ? "media-bar-onclik" : " "
+          } `}
+        >
+          <img src={value.ico} alt={value.alt} />
 
-      {text ? <p>{text}</p> : <></>}
+          <p>{value.content}</p>
+        </div>
+      ))}
     </div>
   );
 };

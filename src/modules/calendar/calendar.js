@@ -23,7 +23,6 @@ class Calendar extends Component {
     super(props);
     this.state = {
       dateContext: moment(),
-      // today: moment(),
       posts: false,
       newPost: true
     };
