@@ -1,7 +1,5 @@
 import React from "react";
 
-// const weeks = ['Jan','Feb','Sea','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov' ,'Dec']
-
 const CalendarNav = props => {
   const { data, change } = props;
 

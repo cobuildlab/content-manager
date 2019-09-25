@@ -67,6 +67,36 @@ class newPost extends Component {
       ]
     };
   }
+  onChangetypePost = indexButton => {
+    console.log("data fron onchange", indexButton);
+    const { typePost } = this.state;
+    console.log("state", typePost);
+    const typePostMute = typePost.map((value, index) => {
+      if (index === indexButton) {
+        return { ...value, active: true };
+      } else {
+        return { ...value, active: false };
+      }
+    });
+    console.log("TYPEPOSTMUTE", typePostMute);
+    this.setState({ typePost: typePostMute });
+  };
+
+  onChangeSocialNetwork = indexButton => {
+    console.log("data fron onchange", indexButton);
+    const { socialNetwork } = this.state;
+    console.log("state", socialNetwork);
+    const socialNetworkMute = socialNetwork.map((value, index) => {
+      if (index === indexButton) {
+        return { ...value, active: true };
+      } else {
+        return { ...value, active: false };
+      }
+    });
+    console.log("Social", socialNetworkMute);
+    this.setState({ socialNetwork: socialNetworkMute });
+  };
+
   render() {
     const { typePost, socialNetwork } = this.state;
 
@@ -82,13 +112,16 @@ class newPost extends Component {
               <h3 className="title-post color-fontPost">Type of post</h3>
 
               <div className="d-flex flex-wrap">
-                <MediaBar data={typePost} />
+                <MediaBar change={this.onChangetypePost} data={typePost} />
               </div>
 
               <h3 className="title-post color-fontPost">Social Network</h3>
 
               <div className="d-flex flex-wrap">
-                <MediaBar data={socialNetwork} />
+                <MediaBar
+                  change={this.onChangeSocialNetwork}
+                  data={socialNetwork}
+                />
               </div>
               <div>
                 <h3 className="title-post color-fontPost">Content</h3>

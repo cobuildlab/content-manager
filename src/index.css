@@ -100,13 +100,33 @@ li {
 /* *********************MEDIA BAR ************************************** */
 
 .media-bar {
-  width: 150px;
+  width: 180px;
   height: 35px;
+  background-color: #212529;
   color: #65798c;
   border: 1px solid #b8c5d3;
   border-radius: 20px;
+  position: relative;
   cursor: pointer;
+  margin: 0 -15px;
+  position: relative;
+  z-index: 10;
 }
+
+/* hack media-bar  */
+.media-bar + div {
+  z-index: 9;
+}
+.media-bar + div + div {
+  z-index: 8;
+}
+.media-bar + div + div + div {
+  z-index: 7;
+}
+
 .media-bar-onclik {
   background-color: #b8c5d3;
+  border-radius: 20px;
+  z-index: 100;
+  transition: 0.4s;
 }
