@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import DashborNav from "../../../components/dashboardNav";
 import MediaBar from "../../../components/mediabar";
 import TextIco from "../../../assets/ico/text.svg";

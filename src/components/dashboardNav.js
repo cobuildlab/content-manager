@@ -5,25 +5,26 @@ import Stast from "../assets/ico/Stats.svg";
 import Video from "../assets/ico/video.svg";
 import Settings from "../assets/ico/Settings.svg";
 import Logout from "../assets/ico/log-out.svg";
+import { Link } from "react-router-dom";
 
 const DashborNav = () => {
   return (
     <div className="d-flex flex-column text-center align-items-center dashboard-nav">
-      <li>
+      <Link to="/dashboard">
         <img src={Home} alt="home icon" />
-      </li>
-      <li>
+      </Link>
+      <Link to="/calendar">
         <img src={Calendar} alt="calender icon"></img>
-      </li>
-      <li>
+      </Link>
+      <Link>
         <img src={Stast} alt="stast icon" />
-      </li>
-      <li>
+      </Link>
+      <Link>
         <img src={Video} alt="video icon" />
-      </li>
-      <li>
+      </Link>
+      <Link>
         <img src={Settings} alt="settings icon" />
-      </li>
+      </Link>
       <li className="logout-icon">
         <img src={Logout} alt="logout ico" />
       </li>

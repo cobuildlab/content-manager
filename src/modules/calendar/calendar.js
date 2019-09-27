@@ -24,7 +24,7 @@ class Calendar extends Component {
     this.state = {
       dateContext: moment(),
       posts: false,
-      newPost: true
+      newPost: false
     };
   }
 

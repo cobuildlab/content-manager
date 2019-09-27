@@ -1,0 +1,11 @@
+.text-dashboard {
+  color: #65798c;
+}
+
+/* POSTDASHBOARD */
+
+.post-information {
+  width: 400px;
+  height: 120px;
+  border: 1px solid white;
+}
