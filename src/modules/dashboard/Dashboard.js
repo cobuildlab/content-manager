@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DashborNav from "../../components/dashboardNav";
 import SocialBar from "../../components/socialBar";
 import InstagramIco from "../../assets/ico/Instagram.svg";
+import FacebookIco from "../../assets/ico/facebook.svg";
 import PostDashboard from "./components/PostDashboard";
 import MentionsDashboard from "./components/MentionsDashboard";
 
@@ -26,13 +27,41 @@ class Dashboard extends Component {
     const { post } = this.state;
     console.log(post);
     return (
-      <div className="d-flex dashboard-container">
+      <div className="d-flex dashboard-container ">
         <DashborNav />
-        <div className=" d-flex flex-column align-items-center">
+        <div className="div-post d-flex flex-column align-items-center">
           <SocialBar ico={InstagramIco} alt={"instagram ico"} />
-          <div className="text-dashboard d-flex justify-content-between ">
-            <div onClick={this.onchangeMentions}>Post</div>
-            <div onClick={this.onchangePost}>Mentions</div>
+          <div className=" div-button text-dashboard d-flex justify-content-between ">
+            <div
+              className="post-button text-center"
+              onClick={this.onchangeMentions}
+            >
+              Post
+            </div>
+            <div
+              className="mentions-button text-center"
+              onClick={this.onchangePost}
+            >
+              Mentions
+            </div>
+          </div>
+          {post ? <PostDashboard /> : <MentionsDashboard />}
+        </div>
+        <div className="div-post d-flex flex-column align-items-center">
+          <SocialBar ico={FacebookIco} alt={"facebook ico"} />
+          <div className=" div-button text-dashboard d-flex justify-content-between ">
+            <div
+              className="post-button text-center"
+              onClick={this.onchangeMentions}
+            >
+              Post
+            </div>
+            <div
+              className="mentions-button text-center"
+              onClick={this.onchangePost}
+            >
+              Mentions
+            </div>
           </div>
           {post ? <PostDashboard /> : <MentionsDashboard />}
         </div>

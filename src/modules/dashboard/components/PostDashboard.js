@@ -12,12 +12,14 @@ const PostDashboard = () => {
       {postfake.map(value => {
         return (
           <div className=" d-flex text-white post-information">
-            <img src={datosImg} alt="datos" width="110" height="110" />
-            <div className="d-flex flex-column flex-wrap justify-content-around text-dashboard">
+            <img src={datosImg} alt="datos" width="130" height="120" />
+            <div className="d-flex flex-column  div-status flex-wrap justify-content-around text-dashboard">
               <div className="d-flex justify-content-between">
                 <div className="d-flex ">
-                  <img src={PlayIco} alt="play ico" width="15" />
-                  Status
+                  <div className="ico-play d-flex justify-content-center align-items-center">
+                    <img src={PlayIco} alt="play ico" width="10" />
+                  </div>
+                  <span>Status</span>
                 </div>
                 <div>
                   <span>Approved</span>
