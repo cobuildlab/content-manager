@@ -3,9 +3,42 @@
 }
 
 /* POSTDASHBOARD */
-
-.post-information {
-  width: 400px;
-  height: 120px;
+/* .div-post {
   border: 1px solid white;
+} */
+.div-post img {
+  padding: 0 !important;
+}
+.div-button {
+  width: 60%;
+}
+.post-button {
+  border: 1px solid white;
+  width: 150px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.mentions-button {
+  border: 1px solid white;
+  width: 150px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.post-information {
+  width: 450px;
+  height: 120px;
+  /* border: 1px solid white; */
+  margin: 10px;
+}
+
+.div-status {
+  padding: 6px;
+  border: 1px solid white;
+}
+.ico-play {
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #65798c;
+  margin-right: 5px;
 }
