@@ -236,7 +236,7 @@ hr {
 label {
   width: 90%;
 }
-input {
+.input-newpost {
   background-color: #5d646b;
   width: 90%;
   height: 40px;
@@ -245,7 +245,7 @@ input {
   margin: 10px !important;
 }
 
-textarea {
+.textarea-newpost {
   background: transparent;
   border: none;
   width: 100%;

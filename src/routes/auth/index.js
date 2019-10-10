@@ -1,8 +1,8 @@
-import React, {Fragment} from 'react';
-import { Route } from 'react-router';
+import React, { Fragment } from "react";
+import { Route } from "react-router";
 
-import AuthContainer from './routes/root';
-import CallbackContainer from './routes/callback';
+import AuthContainer from "./routes/root";
+import CallbackContainer from "./routes/callback";
 
 export const Auth = () => (
   <Fragment>

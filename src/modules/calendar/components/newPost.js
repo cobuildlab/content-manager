@@ -129,7 +129,7 @@ class newPost extends Component {
                 <form className="d-flex flex-column flex-wrap">
                   <div className="div-textarea">
                     <label className="color-fontPost ">
-                      <textarea></textarea>
+                      <textarea className="textarea-newpost"></textarea>
                     </label>
                     <img src={TextIco} alt="text ico " />
                     <img src={FaceIco} alt="face ico " />
@@ -138,12 +138,20 @@ class newPost extends Component {
                   <div className="d-flex justify-content-around ">
                     <label className="d-flex flex-column color-fontPost">
                       Date
-                      <input type="date" name="date" />
+                      <input
+                        className="input-newpost"
+                        type="date"
+                        name="date"
+                      />
                     </label>
 
                     <label className="d-flex flex-column color-fontPost">
                       Time
-                      <input type="time" name="time" />
+                      <input
+                        className="input-newpost"
+                        type="time"
+                        name="time"
+                      />
                     </label>
                   </div>
 
