@@ -135,6 +135,7 @@ class Calendar extends Component {
           </Fragment>
         ) : (
           <Fragment>
+            {/* <div className="d-flex "> */}
             <div className="d-flex flex-column calendar-div">
               <div className="d-flex div-post justify-content-between">
                 <button onClick={this.onChangeNewPost} className="new-post">
@@ -146,44 +147,42 @@ class Calendar extends Component {
                     onClick={this.onChangePosts}
                     src={Block}
                     alt="block ico"
-                  ></img>
+                  />
                 </div>
               </div>
-
               <div className=" d-flex justify-content-around ">
                 {weekdaysShort.map((value, item) => {
                   return (
                     <div className="div-wekks" key={item}>
-                      {value}
+                      {value.substr(0, 1)}
                     </div>
                   );
                 })}
               </div>
-
-              <div className="d-flex flex-wrap ">
-                {calendarShow.map((value, index) => {
-                  if (value < 10) {
-                    return (
-                      <div
-                        className="text-white div-days d-flex justify-content-center align-items-center
-                                        }"
-                        key={index}
-                      >
-                        {`0${value}`}
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div
-                        className="text-white div-days d-flex justify-content-center align-items-center
-                                        }"
-                        key={index}
-                      >
-                        {value}
-                      </div>
-                    );
-                  }
-                })}
+              <div>
+                <div className="d-flex flex-wrap text-white justify-content-center">
+                  {calendarShow.map((value, index) => {
+                    if (value < 10) {
+                      return (
+                        <div
+                          className="text-white div-days d-flex justify-content-center align-items-center"
+                          key={index}
+                        >
+                          {`0${value}`}
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div
+                          className="text-white div-days d-flex justify-content-center align-items-center"
+                          key={index}
+                        >
+                          {value}
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             </div>
 
@@ -201,11 +200,11 @@ class Calendar extends Component {
                   <img src={Create} alt="create ico" />
                 </div>
 
-                <div className="ico-general  border-ico d-flex justify-content-center align-items-center">
+                <div className="ico-general border-ico d-flex justify-content-center align-items-center">
                   <img src={Pause} alt="pause ico" />
                 </div>
 
-                <div className="ico-general  border-ico d-flex justify-content-center align-items-center ">
+                <div className="ico-general border-ico d-flex justify-content-center align-items-center ">
                   <img src={Play} alt="play ico" />
                 </div>
               </div>
@@ -300,6 +299,7 @@ class Calendar extends Component {
                   <img src={Play} alt="pause ico" />
                 </div>
                 <div className="text-white">
+                  28 29 30 31
                   <span>Aug08/2019</span>
                   <br />
                   <img src={Facebook} alt="facebook ico" />
@@ -415,6 +415,7 @@ class Calendar extends Component {
               </div>
             </div>
             {/* *********** STATUS POST ***************************** */}
+            {/* </div> */}
           </Fragment>
         )}
       </div>
