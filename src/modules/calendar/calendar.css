@@ -56,9 +56,21 @@
   margin: 9px;
 }
 
+@media (max-width: 600px) {
+  .div-days {
+    width: 30px;
+    height: 20px;
+    background-color: #32393f;
+    border-radius: 2px;
+    font-size: 14px;
+    /* border: 1px solid white; */
+    margin: 5px;
+  }
+}
+
 .status-post {
   width: 700px;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   margin: 15px 0 0px 10px;
 }
 
@@ -99,6 +111,7 @@
 
 hr {
   background-color: #65798c;
+  width: 100%;
 }
 
 /* *********************STYLE POSTS *************************/
@@ -254,4 +267,24 @@ textarea {
 .div-textarea {
   border-bottom: 1px solid #5d646b;
   width: 90%;
+}
+
+/* POST NOTE   */
+
+.post-note-preview {
+  /* border: 1px solid white; */
+  width: 90%;
+  height: 600px;
+}
+
+.preview-desktop {
+  height: 450px;
+  width: 40%;
+  border: 1px solid white;
+}
+
+.preview-movil {
+  height: 450px;
+  width: 20%;
+  border: 1px solid white;
 }
