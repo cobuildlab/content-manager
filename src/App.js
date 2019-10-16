@@ -13,6 +13,7 @@ import { Auth } from "./routes/auth";
 import history from "./shared/history";
 import Dashboard from "./modules/dashboard/Dashboard";
 import Calendar from "./modules/calendar/calendar";
+import { Post } from "./modules/calendar/components/postNote";
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
 
@@ -27,6 +28,7 @@ const renderContent = () => {
         <Route path="/singup" component={SingUpView} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/calendar" component={Calendar} />
+        <Route path="/post" component={Post} />
       </Switch>
     </AsyncContent>
   );

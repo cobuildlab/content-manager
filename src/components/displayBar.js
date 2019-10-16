@@ -1,7 +1,6 @@
 import React from "react";
 
-const MediaBar = props => {
-  console.log(props);
+const DisplayBar = props => {
   const { data, change } = props;
   return (
     <div className="d-flex">
@@ -13,13 +12,11 @@ const MediaBar = props => {
             value.active === true ? "media-bar-onclik" : " "
           } `}
         >
-          <img src={value.ico} alt={value.alt} />
-
-          <p>{value.content}</p>
+          <p>{value.name}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default MediaBar;
+export default DisplayBar;
