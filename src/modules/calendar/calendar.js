@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import DashborNav from "../../components/dashboardNav";
 import CalendarNav from "./calendarNav";
 import "./calendar.css";
@@ -12,7 +13,6 @@ import Create from "../../assets/ico/create.svg";
 import Facebook from "../../assets/ico/facebook.svg";
 import Twitter from "../../assets/ico/twitter.svg";
 import Posts from "./components/posts";
-import NewPost from "./components/newPost";
 
 const weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
 const weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -23,8 +23,7 @@ class Calendar extends Component {
     super(props);
     this.state = {
       dateContext: moment(),
-      posts: false,
-      newPost: false
+      showByMonths: false
     };
   }
 
@@ -66,32 +65,24 @@ class Calendar extends Component {
     });
   };
 
-  onChangePosts = () => {
-    this.setState({ posts: true });
-  };
-
-  onChangeNewPost = () => {
-    this.setState({ newPost: true });
-    // this.props.history.push
-  };
-
-  onChangeCalendar = () => {
-    this.setState({ posts: false });
+  onChangeShowByMonths = () => {
+    const { showByMonths } = this.state;
+    this.setState({ showByMonths: !showByMonths });
   };
 
   render() {
-    // console.log('YEAR : ',moment().format('Y'))
-    // console.log('MONTH :',moment().format('MMM'))
-    // console.log('DAYSINMONTH :',moment().daysInMonth())
-    // console.log('CURRENTDATE :',moment().get('date'))
-    // console.log('CURRETDAY :',moment().format('D'))
+    console.log("YEAR : ", moment().format("Y"));
+    console.log("MONTH :", moment().format("MMM"));
+    console.log("DAYSINMONTH :", moment().daysInMonth());
+    console.log("CURRENTDATE :", moment().get("date"));
+    console.log("CURRETDAY :", moment().format("D"));
 
     const blanks = [];
 
     for (let i = 0; i < this.firstDayOfMonth(); i++) {
       blanks.push(" ");
     }
-    // console.log("blanks: ", blanks);
+    console.log("blanks: ", blanks);
 
     const daysInMonth = [];
 
@@ -99,33 +90,35 @@ class Calendar extends Component {
       daysInMonth.push(d);
     }
 
-    // console.log("days: ", daysInMonth);
+    console.log("days: ", daysInMonth);
 
     const calendarShow = [...blanks, ...daysInMonth];
 
-    const { posts } = this.state;
+    const { showByMonths } = this.state;
 
-    if (this.state.newPost) {
-      return <NewPost />;
-    }
+    const styleIcoBlock = {
+      marginRight: 10,
+      cursor: "pointer"
+    };
     return (
       <div className="calendar-container d-flex">
         <DashborNav />
 
         <CalendarNav change={this.selectMonth} data={months} />
-        {posts ? (
+        {showByMonths ? (
           <Fragment>
             <div className="d-flex flex-column post-container div-post ">
               <div className="d-flex justify-content-between">
-                <button onClick={this.onChangeNewPost} className="new-post">
-                  NEW POST
-                </button>
+                <Link to="/new-post">
+                  <button className="new-post">NEW POST</button>
+                </Link>
                 <div>
                   <img
-                    onClick={this.onChangeCalendar}
+                    onClick={this.onChangeShowByMonths}
                     src={CalendarIco}
                     height="40"
                     alt="calendar ico"
+                    style={styleIcoBlock}
                   />
                   <img src={Block} alt="block ico"></img>
                 </div>
@@ -138,13 +131,19 @@ class Calendar extends Component {
             {/* <div className="d-flex "> */}
             <div className="d-flex flex-column calendar-div">
               <div className="d-flex div-post justify-content-between">
-                <button onClick={this.onChangeNewPost} className="new-post">
-                  NEW POST
-                </button>
+                <Link to="/new-post">
+                  <button className="new-post">NEW POST</button>
+                </Link>
                 <div>
-                  <img src={CalendarIco} height="40" alt="calendar ico" />
                   <img
-                    onClick={this.onChangePosts}
+                    style={{ marginRight: 10 }}
+                    src={CalendarIco}
+                    height="40"
+                    alt="calendar ico"
+                  />
+                  <img
+                    style={styleIcoBlock}
+                    onClick={this.onChangeShowByMonths}
                     src={Block}
                     alt="block ico"
                   />

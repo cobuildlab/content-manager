@@ -1,12 +1,15 @@
-import React from 'react';
-import { Loader } from '@8base/boost';
-import { withAuth } from '@8base/app-provider';
-import { PropTypes } from 'prop-types';
+import React from "react";
+import { Loader } from "@8base/boost";
+import { withAuth } from "@8base/app-provider";
+import { PropTypes } from "prop-types";
 
 class AuthContainer extends React.Component {
   async componentDidMount() {
     const { auth } = this.props;
-    await auth.authorize({ mode: 'signup', state: `{ someKey: 'some value' }` });
+    await auth.authorize({
+      mode: "signup",
+      state: `{ someKey: 'some value' }`
+    });
   }
 
   render() {
@@ -19,7 +22,7 @@ class AuthContainer extends React.Component {
 }
 
 AuthContainer.propTypes = {
-  auth: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 };
 
 export default withAuth(AuthContainer);
