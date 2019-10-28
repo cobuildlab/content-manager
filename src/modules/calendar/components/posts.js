@@ -6,7 +6,7 @@ const plus = <img src={Plus} alt="plus ico " />;
 const postFake = ["", "", "", "", "", "", "", "", "", "", "", plus];
 
 const Posts = props => {
-  console.log(" PROPS FROM COMPONENT POSTS:", props);
+  console.log("PROPS FROM COMPONENT POSTS:", props);
 
   return (
     <div className="d-flex flex-column">

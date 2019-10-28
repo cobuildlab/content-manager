@@ -1,21 +1,22 @@
 import React, { Component } from "react";
-import DashborNav from "../../../components/dashboardNav";
-import MediaBar from "../../../components/mediabar";
-import displayBar from "../../../components/displayBar";
-import TextIco from "../../../assets/ico/text.svg";
-import PictureIco from "../../../assets/ico/picture.svg";
-import VideoIco from "../../../assets/ico/video.svg";
-import GifIco from "../../../assets/ico/gif.svg";
-import FacebookIco from "../../../assets/ico/facebook.svg";
-import TwitterIco from "../../../assets/ico/twitter.svg";
-import InstagramIco from "../../../assets/ico/Instagram.svg";
-import LinkedinIco from "../../../assets/ico/linkedin.svg";
-import FaceIco from "../../../assets/ico/face.svg";
-import DisplayBar from "../../../components/displayBar";
-import MovilIco from "../../../assets/ico/movil.svg";
-import DesktopIco from "../../../assets/ico/desktop.svg";
+import DashborNav from "../../components/dashboardNav";
+import MediaBar from "../../components/mediabar";
+import displayBar from "../../components/displayBar";
+import TextIco from "../../assets/ico/text.svg";
+import PictureIco from "../../assets/ico/picture.svg";
+import VideoIco from "../../assets/ico/video.svg";
+import GifIco from "../../assets/ico/gif.svg";
+import FacebookIco from "../../assets/ico/facebook.svg";
+import TwitterIco from "../../assets/ico/twitter.svg";
+import InstagramIco from "../../assets/ico/Instagram.svg";
+import LinkedinIco from "../../assets/ico/linkedin.svg";
+import FaceIco from "../../assets/ico/face.svg";
+import DisplayBar from "../../components/displayBar";
+import MovilIco from "../../assets/ico/movil.svg";
+import DesktopIco from "../../assets/ico/desktop.svg";
+import "./post.css";
 
-class Post extends Component {
+class PostNote extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -191,7 +192,7 @@ class Post extends Component {
                 <form className="d-flex flex-column flex-wrap">
                   <div className="div-textarea">
                     <label className="color-fontPost ">
-                      <textarea></textarea>
+                      <textarea className="textarea-newpost"></textarea>
                     </label>
                     <img src={TextIco} alt="text ico " />
                     <img src={FaceIco} alt="face ico " />
@@ -200,12 +201,20 @@ class Post extends Component {
                   <div className="d-flex justify-content-around ">
                     <label className="d-flex flex-column color-fontPost">
                       Date
-                      <input type="date" name="date" />
+                      <input
+                        type="date"
+                        name="date"
+                        className="input-newpost"
+                      />
                     </label>
 
                     <label className="d-flex flex-column color-fontPost">
                       Time
-                      <input type="time" name="time" />
+                      <input
+                        type="time"
+                        name="time"
+                        className="input-newpost"
+                      />
                     </label>
                   </div>
 
@@ -220,7 +229,7 @@ class Post extends Component {
               <div className="div-textarea">
                 <label className="color-fontPost ">
                   Comentary
-                  <textarea></textarea>
+                  <textarea className="textarea-newpost"></textarea>
                 </label>
                 <img src={TextIco} alt="text ico " />
                 <img src={FaceIco} alt="face ico " />
@@ -233,4 +242,4 @@ class Post extends Component {
   }
 }
 
-export { Post };
+export { PostNote };

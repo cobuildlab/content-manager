@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import DashborNav from "../../../components/dashboardNav";
-import MediaBar from "../../../components/mediabar";
-import TextIco from "../../../assets/ico/text.svg";
-import PictureIco from "../../../assets/ico/picture.svg";
-import VideoIco from "../../../assets/ico/video.svg";
-import GifIco from "../../../assets/ico/gif.svg";
-import FacebookIco from "../../../assets/ico/facebook.svg";
-import TwitterIco from "../../../assets/ico/twitter.svg";
-import InstagramIco from "../../../assets/ico/Instagram.svg";
-import LinkedinIco from "../../../assets/ico/linkedin.svg";
-import MovilIco from "../../../assets/ico/movil.svg";
-import DesktopIco from "../../../assets/ico/desktop.svg";
-import FaceIco from "../../../assets/ico/face.svg";
+import DashborNav from "../../components/dashboardNav";
+import MediaBar from "../../components/mediabar";
+import TextIco from "../../assets/ico/text.svg";
+import PictureIco from "../../assets/ico/picture.svg";
+import VideoIco from "../../assets/ico/video.svg";
+import GifIco from "../../assets/ico/gif.svg";
+import FacebookIco from "../../assets/ico/facebook.svg";
+import TwitterIco from "../../assets/ico/twitter.svg";
+import InstagramIco from "../../assets/ico/Instagram.svg";
+import LinkedinIco from "../../assets/ico/linkedin.svg";
+import MovilIco from "../../assets/ico/movil.svg";
+import DesktopIco from "../../assets/ico/desktop.svg";
+import FaceIco from "../../assets/ico/face.svg";
+import "./post.css";
 
 class newPost extends Component {
   constructor(props) {
