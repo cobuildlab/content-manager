@@ -12,8 +12,8 @@ import SingUpView from "./modules/landingpage/singup/SingUpView";
 import { Auth } from "./routes/auth";
 import history from "./shared/history";
 import Dashboard from "./modules/dashboard/Dashboard";
-import Calendar from "./modules/calendar/calendar";
-import NewPost from "./modules/post/newPost";
+import { Calendar } from "./modules/calendar/calendar";
+import { NewPost } from "./modules/post/newPost";
 import { PostNote } from "./modules/post/postNote";
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
