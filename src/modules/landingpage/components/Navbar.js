@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -7,29 +7,50 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Button} from 'reactstrap';
-import {AuthLogin} from '../../auth/auth.actions';
+  Button
+} from "reactstrap";
+import { AuthLogin } from "../../auth/auth.actions";
 
-const NavBar = () => {
+const NavBar = props => {
+  console.log("PROPS FRON NAVBAR", props);
   const [toggle, setToggle] = useState(false);
 
   const onToggle = () => {
     setToggle(!toggle);
   };
 
-  return(
-    <Navbar expand="lg" style={{padding: 0}}>
-      <NavbarBrand className='mr-auto'>
-        <Link to='/home' style={{color: '#B8C5D3'}}>LOGO</Link>
+  return (
+    <Navbar expand="lg" style={{ padding: 0 }}>
+      <NavbarBrand className="mr-auto">
+        <Link to="/home" style={{ color: "#B8C5D3" }}>
+          LOGO
+        </Link>
       </NavbarBrand>
-      <NavbarToggler onClick={onToggle} className='ml-auto'/>
+      <NavbarToggler onClick={onToggle} className="ml-auto" />
       <Collapse isOpen={toggle} navbar>
         <Nav className="ml-auto" navbar>
-          <NavItem className='mr-2 ml-3'>
-            <NavLink to='#' onClick={(e)=>{AuthLogin()}} style={{color: '#B8C5D3'}}><span>LOG IN</span></NavLink>
+          <NavItem className="mr-2 ml-3">
+            <NavLink
+              to="#"
+              onClick={e => {
+                AuthLogin();
+              }}
+              style={{ color: "#B8C5D3" }}
+            >
+              <span>LOG IN</span>
+            </NavLink>
           </NavItem>
-          <NavItem className='mr-3 ml-3'>
-            <Button className='btn pr-3 pl-3' style={{backgroundColor: '#B8C5D3', border: 'none'}}><Link to='/singup' style={{color: 'white'}}><span><b>SING UP</b></span></Link></Button>
+          <NavItem className="mr-3 ml-3">
+            <Button
+              className="btn pr-3 pl-3"
+              style={{ backgroundColor: "#B8C5D3", border: "none" }}
+            >
+              <Link to="/singup" style={{ color: "white" }}>
+                <span>
+                  <b>SING UP</b>
+                </span>
+              </Link>
+            </Button>
           </NavItem>
         </Nav>
       </Collapse>
@@ -37,4 +58,4 @@ const NavBar = () => {
   );
 };
 
-export {NavBar};
+export { NavBar };

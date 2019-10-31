@@ -11,7 +11,8 @@ const styleImage = {
   width: 250
 };
 
-const Landing = () => {
+const Landing = props => {
+  console.log(props);
   return (
     <Fragment>
       <Header>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import DashborNav from "../../components/dashboardNav";
 import SocialBar from "../../components/socialBar";
 import InstagramIco from "../../assets/ico/Instagram.svg";
@@ -8,66 +8,51 @@ import MentionsDashboard from "./components/MentionsDashboard";
 
 import "./dashboard.css";
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      post: true,
-      mentions: false
-    };
-  }
+const Dashboard = () => {
+  const [post, setPost] = useState(true);
 
-  onchangePost = () => {
-    this.setState({ post: false });
+  const onChangePost = () => {
+    setPost(true);
   };
-  onchangeMentions = () => {
-    this.setState({ post: true });
+  const onChangeMentions = () => {
+    setPost(false);
   };
-  render() {
-    const { post } = this.state;
-    console.log(post);
-    return (
-      <div className="d-flex dashboard-container ">
-        <DashborNav />
-        <div className="div-post d-flex flex-column align-items-center">
-          <SocialBar ico={InstagramIco} alt={"instagram ico"} />
-          <div className=" div-button text-dashboard d-flex justify-content-between ">
-            <div
-              className="post-button text-center"
-              onClick={this.onchangeMentions}
-            >
-              Post
-            </div>
-            <div
-              className="mentions-button text-center"
-              onClick={this.onchangePost}
-            >
-              Mentions
-            </div>
+
+  return (
+    <div className="d-flex dashboard-container ">
+      <DashborNav />
+      <div className="div-post d-flex flex-column align-items-center">
+        <SocialBar ico={InstagramIco} alt={"instagram ico"} />
+        <div className=" div-button text-dashboard d-flex justify-content-between ">
+          <div className="post-button text-center" onClick={onChangePost}>
+            Post
           </div>
-          {post ? <PostDashboard /> : <MentionsDashboard />}
-        </div>
-        <div className="div-post d-flex flex-column align-items-center">
-          <SocialBar ico={FacebookIco} alt={"facebook ico"} />
-          <div className=" div-button text-dashboard d-flex justify-content-between ">
-            <div
-              className="post-button text-center"
-              onClick={this.onchangeMentions}
-            >
-              Post
-            </div>
-            <div
-              className="mentions-button text-center"
-              onClick={this.onchangePost}
-            >
-              Mentions
-            </div>
+          <div
+            className="mentions-button text-center"
+            onClick={onChangeMentions}
+          >
+            Mentions
           </div>
-          {post ? <PostDashboard /> : <MentionsDashboard />}
         </div>
+        {post ? <PostDashboard /> : <MentionsDashboard />}
       </div>
-    );
-  }
-}
+      <div className="div-post d-flex flex-column align-items-center">
+        <SocialBar ico={FacebookIco} alt={"facebook ico"} />
+        <div className=" div-button text-dashboard d-flex justify-content-between ">
+          <div className="post-button text-center" onClick={onChangePost}>
+            Post
+          </div>
+          <div
+            className="mentions-button text-center"
+            onClick={onChangeMentions}
+          >
+            Mentions
+          </div>
+        </div>
+        {post ? <PostDashboard /> : <MentionsDashboard />}
+      </div>
+    </div>
+  );
+};
 
 export default Dashboard;
