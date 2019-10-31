@@ -1,11 +1,11 @@
-import React from 'react';
-import {NavBar} from './Navbar';
-import './assets/header.css';
-import { PropTypes } from 'prop-types';
+import React from "react";
+import { NavBar } from "./Navbar";
+import "./assets/header.css";
+import { PropTypes } from "prop-types";
 
-const Header = ({children}) => {
-  return(
-    <div className='container-fluid header-logo'>
+const Header = ({ children }) => {
+  return (
+    <div className="container-fluid header-logo">
       <NavBar />
       {children}
     </div>
@@ -13,7 +13,7 @@ const Header = ({children}) => {
 };
 
 Header.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
 };
 
-export {Header};
+export { Header };
