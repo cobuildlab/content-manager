@@ -111,9 +111,9 @@ export const ForgotPassword = email => {
 };
 
 export const createUserWithToken = async token => {
-  console.log("TOKEN:", token);
+  console.log("TOKEN: fron create user", token);
   const { email } = jwtToken(token);
-  console.log("EMAIL", email);
+  console.log("EMAIL fron create user", email);
 
   const client = authStore.getState(ON_APOLLO_CLIENT);
   const data = {

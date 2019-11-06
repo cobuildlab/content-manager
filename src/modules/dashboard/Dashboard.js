@@ -8,7 +8,8 @@ import MentionsDashboard from "./components/MentionsDashboard";
 
 import "./dashboard.css";
 
-const Dashboard = () => {
+const Dashboard = props => {
+  console.log("props from Dashboard", props);
   const [post, setPost] = useState(true);
 
   const onChangePost = () => {

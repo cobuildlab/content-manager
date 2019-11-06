@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import {
   Collapse,
@@ -9,7 +9,9 @@ import {
   NavItem,
   Button
 } from "reactstrap";
-import { AuthLogin } from "../../auth/auth.actions";
+import { AuthLogin, createUserWithToken } from "../../auth/auth.actions";
+import { useFluxStore } from "@cobuildlab/react-flux-state";
+import { authStore, On_CREATE_USER } from "../../auth/authStore";
 
 const NavBar = props => {
   console.log("PROPS FRON NAVBAR", props);
@@ -18,6 +20,16 @@ const NavBar = props => {
   const onToggle = () => {
     setToggle(!toggle);
   };
+
+  // const genere = useFluxStore(authStore, On_CREATE_USER, {}, async TOKEN => {
+  //   await createUserWithToken(TOKEN);
+  // });
+  useEffect(async () => {
+    const TOKEN = localStorage.getItem("auth") || "no contiene";
+    console.log("TOKEN", TOKEN);
+
+    // genere(Toke)
+  }, []);
 
   return (
     <Navbar expand="lg" style={{ padding: 0 }}>
