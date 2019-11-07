@@ -12,7 +12,6 @@ const styleImage = {
 };
 
 const Landing = props => {
-  console.log("props from Landign ", props);
   return (
     <Fragment>
       <Header>

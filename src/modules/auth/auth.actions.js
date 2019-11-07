@@ -11,14 +11,19 @@ import {
   On_ERROR_USER,
   On_CREATE_USER
 } from "./authStore";
-import { CREATE_USER_QUERY } from "./querys";
+import { CURRENT_USER_QUERY, USER_SIGN_UP_MUTATION } from "./querys";
 import Flux from "@cobuildlab/flux-state";
+import { Client } from "@8base/api-client";
 
 const {
   REACT_APP_CLIENT_ID,
   REACT_APP_DOMAIN,
-  REACT_APP_AUTH_DATABASE
+  REACT_APP_AUTH_DATABASE,
+  REACT_APP_8BASE_API_ENDPOINT,
+  REACT_APP_AUTH_PROVIDER_ID
 } = process.env;
+
+const client = new Client(REACT_APP_8BASE_API_ENDPOINT);
 
 export const auth0WebClient = new WebAuth0AuthClient({
   domain: REACT_APP_DOMAIN,
@@ -110,27 +115,44 @@ export const ForgotPassword = email => {
   }
 };
 
-export const createUserWithToken = async token => {
+export const createUserWithToken = async ({ token, idToken }) => {
   console.log("TOKEN: fron create user", token);
   const { email } = jwtToken(token);
   console.log("EMAIL fron create user", email);
 
-  const client = authStore.getState(ON_APOLLO_CLIENT);
-  const data = {
-    user: email,
-    authId: REACT_APP_CLIENT_ID
-  };
+  // const client = authStore.getState(ON_APOLLO_CLIENT);
+  // const data = {
+  //   user: email,
+  //   authId: REACT_APP_CLIENT_ID
+  // };
 
-  let response;
+  // let response;
 
+  // try {
+  //   response = await client.mutate({
+  //     mutation: CREATE_USER_QUERY,
+  //     variables: data
+  //   });
+  // } catch (error) {
+  //   Flux.dispatchEvent(On_ERROR_USER, error);
+  // }
+  // Flux.dispatchEvent(On_CREATE_USER, response.data);
+  // return response.data;
+  client.setIdToken(idToken);
+  /**
+   * Check if user exists in 8base.
+   */
   try {
-    response = await client.mutate({
-      mutation: CREATE_USER_QUERY,
-      variables: data
+    await client.request(CURRENT_USER_QUERY);
+  } catch {
+    /**
+     * If user doesn't exist, an error will be
+     * thrown, which then the new user can be
+     * created using the authResult values.
+     */
+    await client.request(USER_SIGN_UP_MUTATION, {
+      user: { email: email },
+      authProfileId: REACT_APP_AUTH_PROVIDER_ID
     });
-  } catch (error) {
-    Flux.dispatchEvent(On_ERROR_USER, error);
   }
-  Flux.dispatchEvent(On_CREATE_USER, response.data);
-  return response.data;
 };

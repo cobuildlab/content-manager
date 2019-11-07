@@ -1,10 +1,21 @@
 import gql from "graphql-tag";
 
-export const CREATE_USER_QUERY = gql`
-  mutation($user: UserCreateInput!, $authId: ID!) {
-    userSignUpWithToken(user: $user, authProfileId: $authId) {
+//
+export const USER_SIGN_UP_MUTATION = gql`
+  mutation UserSignUp($user: UserCreateInput!, $authProfileId: ID) {
+    userSignUpWithToken(user: $user, authProfileId: $authProfileId) {
       id
       email
+    }
+  }
+`;
+export const CURRENT_USER_QUERY = gql`
+  query {
+    user {
+      id
+      email
+      lastName
+      firstName
     }
   }
 `;
