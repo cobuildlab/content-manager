@@ -15,6 +15,7 @@ import Dashboard from "./modules/dashboard/Dashboard";
 import { Calendar } from "./modules/calendar/calendar";
 import { NewPost } from "./modules/post/newPost";
 import { PostNote } from "./modules/post/postNote";
+import { ProtectedRoute } from "./shared/components/ProtectedRoute";
 
 const { REACT_APP_8BASE_API_ENDPOINT } = process.env;
 
@@ -27,10 +28,10 @@ const renderContent = () => {
         <Route path="/forgotPassword" component={ForgotPasswordView} />
         <Route path="/login" component={LoginView} />
         <Route path="/singup" component={SingUpView} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/calendar" component={Calendar} />
-        <Route path="/new-post" component={NewPost} />
-        <Route path="/post-note" component={PostNote} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/calendar" component={Calendar} />
+        <ProtectedRoute path="/new-post" component={NewPost} />
+        <ProtectedRoute path="/post-note" component={PostNote} />
       </Switch>
     </AsyncContent>
   );

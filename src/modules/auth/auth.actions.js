@@ -120,24 +120,6 @@ export const createUserWithToken = async ({ token, idToken }) => {
   const { email } = jwtToken(token);
   console.log("EMAIL fron create user", email);
 
-  // const client = authStore.getState(ON_APOLLO_CLIENT);
-  // const data = {
-  //   user: email,
-  //   authId: REACT_APP_CLIENT_ID
-  // };
-
-  // let response;
-
-  // try {
-  //   response = await client.mutate({
-  //     mutation: CREATE_USER_QUERY,
-  //     variables: data
-  //   });
-  // } catch (error) {
-  //   Flux.dispatchEvent(On_ERROR_USER, error);
-  // }
-  // Flux.dispatchEvent(On_CREATE_USER, response.data);
-  // return response.data;
   client.setIdToken(idToken);
   /**
    * Check if user exists in 8base.

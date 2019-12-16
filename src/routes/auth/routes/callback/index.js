@@ -7,17 +7,13 @@ import { createUserWithToken } from "../../../../modules/auth/auth.actions";
 class CallbackContainer extends React.Component {
   async componentDidMount() {
     const { auth, history, location } = this.props;
-    console.log("obj from callback", auth);
-
     const authResult = await auth.authState;
-    console.log(authResult);
-
-    await createUserWithToken(authResult);
 
     const paramsString = location.hash.replace("#", "?");
     const params = new URLSearchParams(paramsString);
     const idToken = params.get("id_token");
     await auth.setAuthState({ token: idToken, idToken });
+    await createUserWithToken(authResult);
     const redirectUri = sessionStorage.getItem("redirectUri") || "/dashboard";
     history.replace(redirectUri);
   }
