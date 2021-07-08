@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@8base/app-provider": "^0.21.4",
+    "@8base/app-provider": "^0.37.2",
     "@8base/boost": "^0.18.7",
     "@8base/file-input": "^0.11.3",
     "@8base/forms": "^0.21.4",
